@@ -13,6 +13,9 @@ func _unhandled_input(event):
 			var unit = grid.get_unit_at(mouse_cell)
 			print(grid.get_location_at(mouse_cell))
 			set_active_unit(unit)
+	
+	if Input.is_action_just_pressed("click_right"):
+		set_active_unit(null)
 
 func _ready():
 	$Interface/Quadrant1/DangerLevelBar.level = 1
