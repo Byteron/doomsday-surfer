@@ -48,13 +48,13 @@ func _on_KaijuPlant_pressed(data):
 
 func _on_PowerCollector_pressed(data):
 	var unit = Global.Unit.instance()
-	unit.initialize(data, grid.get_location_at(Vector2(1, 3)))
+	unit.initialize(data, grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
 	$Interface/UnitButtons/PowerCollector.hide()
 
 func _on_Survivors_pressed(data):
 	var unit = Global.Unit.instance()
-	unit.initialize(data, grid.get_location_at(Vector2(3, 3)))
+	unit.initialize(data, grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
 	$Interface/UnitButtons/Survivors.hide()
 
