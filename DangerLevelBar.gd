@@ -3,7 +3,7 @@ extends Control
 const ACTIVE = Color("FFFFFF")
 const INACTIVE = Color("111111")
 
-var level = 1 setget _set_level, _get_level
+var level = 3 setget _set_level, _get_level
 
 func _ready():
 	update_bar()
