@@ -28,7 +28,7 @@ position = Vector2( 128, 0 )
 mode = 0
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 128, 128 )
-cell_quadrant_size = 16
+cell_quadrant_size = 1
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
@@ -43,7 +43,7 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 3, 0, 3, 3, 0, 65536, 1, 0, 65537, 1, 0, 65538, 3, 0, 65539, 3, 0, 131072, 5, 0, 131073, 5, 0, 131074, 7, 0, 131075, 7, 0, 196608, 5, 0, 196609, 5, 0, 196610, 7, 0, 196611, 7, 0 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Cell", "Transform" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="Units" type="Node2D" parent="." index="3"]
 

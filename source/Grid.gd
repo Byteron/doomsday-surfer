@@ -9,6 +9,7 @@ var locations = {}
 func _ready():
 	for y in range(HEIGHT):
 		for x in range(WIDTH):
+			x += 1
 			locations[_flatten(Vector2(x, y))] = {
 				cell = Vector2(x, y),
 				position = map_to_world_centered(Vector2(x, y)),
