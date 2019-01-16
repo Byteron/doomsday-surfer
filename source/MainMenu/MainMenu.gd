@@ -17,7 +17,7 @@ func _ready():
 
 func _on_Button_pressed():
 	print("StartGame pressed")
-	get_tree().change_scene("res://source/Game.gd")
+	get_tree().change_scene("res://source/Game.tscn")
 
 func _on_Button2_pressed():
 	print("Options pressed")
