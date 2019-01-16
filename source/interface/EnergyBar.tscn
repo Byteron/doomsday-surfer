@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://images/interface/over_bar_texture.png" type="Texture" id=1]
-[ext_resource path="res://images/interface/fill_bar_texture.png" type="Texture" id=2]
+[ext_resource path="res://graphics/interface/over_bar_texture.png" type="Texture" id=1]
+[ext_resource path="res://graphics/interface/fill_bar_texture.png" type="Texture" id=2]
+
+
 
 [node name="EnergyBar" type="TextureProgress"]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red.png-169c6f9b48fa6179130a9dfe5d76848b.stex"
+path="res://.import/level_4.png-afec81a0778e32d7f7c77a9e2eb6eeb0.stex"
 
 [deps]
 
-source_file="res://images/terrain/red.png"
-dest_files=[ "res://.import/red.png-169c6f9b48fa6179130a9dfe5d76848b.stex" ]
+source_file="res://graphics/interface/level_4.png"
+dest_files=[ "res://.import/level_4.png-afec81a0778e32d7f7c77a9e2eb6eeb0.stex" ]
 
 [params]
 

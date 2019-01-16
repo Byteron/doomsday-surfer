@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fill_bar_texture.png-e2c3cd1150d699dd6d0c9d7ac34bb2d0.stex"
+path="res://.import/blue.png-71acde36be87df52e0852c32b5873e30.stex"
 
 [deps]
 
-source_file="res://images/interface/fill_bar_texture.png"
-dest_files=[ "res://.import/fill_bar_texture.png-e2c3cd1150d699dd6d0c9d7ac34bb2d0.stex" ]
+source_file="res://graphics/terrain/blue.png"
+dest_files=[ "res://.import/blue.png-71acde36be87df52e0852c32b5873e30.stex" ]
 
 [params]
 

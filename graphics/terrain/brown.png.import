@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/power_collector.png-33ca996f2022b9768da3ef26954aee2a.stex"
+path="res://.import/brown.png-dc1e209776e679b83031e6a5073fe969.stex"
 
 [deps]
 
-source_file="res://images/units/power_collector.png"
-dest_files=[ "res://.import/power_collector.png-33ca996f2022b9768da3ef26954aee2a.stex" ]
+source_file="res://graphics/terrain/brown.png"
+dest_files=[ "res://.import/brown.png-dc1e209776e679b83031e6a5073fe969.stex" ]
 
 [params]
 

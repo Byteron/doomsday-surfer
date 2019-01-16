@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/survivors.png-09711c9dd10488ecb7f4e9a2bc95981e.stex"
+path="res://.import/kaiju_plant.png-647f68b94d242aab4dba9e3c556694f8.stex"
 
 [deps]
 
-source_file="res://images/units/survivors.png"
-dest_files=[ "res://.import/survivors.png-09711c9dd10488ecb7f4e9a2bc95981e.stex" ]
+source_file="res://graphics/units/kaiju_plant.png"
+dest_files=[ "res://.import/kaiju_plant.png-647f68b94d242aab4dba9e3c556694f8.stex" ]
 
 [params]
 

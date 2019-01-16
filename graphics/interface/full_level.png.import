@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/full_level.png-04e18543d01be2842fc0e54110a4df38.stex"
+path="res://.import/full_level.png-d76ea152330bf45ed797df9ae6a3803d.stex"
 
 [deps]
 
-source_file="res://images/interface/full_level.png"
-dest_files=[ "res://.import/full_level.png-04e18543d01be2842fc0e54110a4df38.stex" ]
+source_file="res://graphics/interface/full_level.png"
+dest_files=[ "res://.import/full_level.png-d76ea152330bf45ed797df9ae6a3803d.stex" ]
 
 [params]
 

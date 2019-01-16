@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/push_skill.png-bbebbb0dfbbd81edde4c7e9ccc41a0ab.stex"
+path="res://.import/level_2.png-079fd4d3e6b6f577170e381a5afd09d7.stex"
 
 [deps]
 
-source_file="res://images/interface/push_skill.png"
-dest_files=[ "res://.import/push_skill.png-bbebbb0dfbbd81edde4c7e9ccc41a0ab.stex" ]
+source_file="res://graphics/interface/level_2.png"
+dest_files=[ "res://.import/level_2.png-079fd4d3e6b6f577170e381a5afd09d7.stex" ]
 
 [params]
 

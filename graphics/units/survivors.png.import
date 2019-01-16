@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow.png-311f9279b642fe198446c81f341fdd8a.stex"
+path="res://.import/survivors.png-e24cb9476a01798a118ff4b921046c32.stex"
 
 [deps]
 
-source_file="res://images/terrain/yellow.png"
-dest_files=[ "res://.import/yellow.png-311f9279b642fe198446c81f341fdd8a.stex" ]
+source_file="res://graphics/units/survivors.png"
+dest_files=[ "res://.import/survivors.png-e24cb9476a01798a118ff4b921046c32.stex" ]
 
 [params]
 

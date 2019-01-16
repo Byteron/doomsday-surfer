@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/over_bar_texture.png-37777a57fd08f0b950eb571e0b9b1de7.stex"
+path="res://.import/doomsday_surfer.png-39a720046b4f6ebf946ce7d191bc0fd1.stex"
 
 [deps]
 
-source_file="res://images/interface/over_bar_texture.png"
-dest_files=[ "res://.import/over_bar_texture.png-37777a57fd08f0b950eb571e0b9b1de7.stex" ]
+source_file="res://graphics/units/doomsday_surfer.png"
+dest_files=[ "res://.import/doomsday_surfer.png-39a720046b4f6ebf946ce7d191bc0fd1.stex" ]
 
 [params]
 

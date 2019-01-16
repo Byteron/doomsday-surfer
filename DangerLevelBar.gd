@@ -26,7 +26,7 @@ func _set_active(level):
 func _set_level(value):
 	if value < 5 and value > 0:
 		level = value
-		_update_bar()
+		update_bar()
 
 func _get_level():
 	return level

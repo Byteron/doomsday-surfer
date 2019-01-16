@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level_2.png-e79c58c8cd23d7a021cde4d2b9b3608d.stex"
+path="res://.import/over_bar_texture.png-64d98cc646ba64c474ee791785dd14aa.stex"
 
 [deps]
 
-source_file="res://images/interface/level_2.png"
-dest_files=[ "res://.import/level_2.png-e79c58c8cd23d7a021cde4d2b9b3608d.stex" ]
+source_file="res://graphics/interface/over_bar_texture.png"
+dest_files=[ "res://.import/over_bar_texture.png-64d98cc646ba64c474ee791785dd14aa.stex" ]
 
 [params]
 

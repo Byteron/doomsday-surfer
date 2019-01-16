@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/doomsday_surfer.png-4480bb56df80c80a14df5be95c08d9d2.stex"
+path="res://.import/scenario_concept.png-a43909de22d7ece5224dadf6ac7fa0f1.stex"
 
 [deps]
 
-source_file="res://images/units/doomsday_surfer.png"
-dest_files=[ "res://.import/doomsday_surfer.png-4480bb56df80c80a14df5be95c08d9d2.stex" ]
+source_file="res://graphics/terrain/scenario_concept.png"
+dest_files=[ "res://.import/scenario_concept.png-a43909de22d7ece5224dadf6ac7fa0f1.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kaiju_plant.png-84d2b4b8142924d6f0fe1cef0d5652f1.stex"
+path="res://.import/yellow.png-ed2570750113eeb74d08fc684b45c704.stex"
 
 [deps]
 
-source_file="res://images/units/kaiju_plant.png"
-dest_files=[ "res://.import/kaiju_plant.png-84d2b4b8142924d6f0fe1cef0d5652f1.stex" ]
+source_file="res://graphics/terrain/yellow.png"
+dest_files=[ "res://.import/yellow.png-ed2570750113eeb74d08fc684b45c704.stex" ]
 
 [params]
 
