@@ -11,7 +11,7 @@ func _unhandled_input(event):
 			active_unit.move_to(mouse_cell)
 		else: 
 			var unit = grid.get_unit_at(mouse_cell)
-			print(mouse_cell)
+			print(grid.get_location_at(mouse_cell))
 			set_active_unit(unit)
 
 func _ready():

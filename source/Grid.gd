@@ -22,6 +22,9 @@ func map_to_world_centered(cell):
 func get_unit_at(cell):
 	return locations[_flatten(cell)].unit
 
+func get_location_at(cell):
+	return locations[_flatten(cell)]
+
 func set_unit_at(unit, cell):
 	locations[_flatten(cell)].unit = unit
 
