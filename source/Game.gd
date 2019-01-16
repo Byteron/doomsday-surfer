@@ -1,5 +1,7 @@
 extends Node2D
 
+var selected_unit = null
+
 func _ready():
 	$Interface/Quadrant1/DangerLevelBar.level = 1
 	$Interface/Quadrant2/DangerLevelBar.level = 2
