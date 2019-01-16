@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex"
+path="res://.import/tsunami.png-7446101d1b4c3263f89d2d212a6ec37f.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept2.png"
-dest_files=[ "res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex" ]
+source_file="res://graphics/terrain/tsunami.png"
+dest_files=[ "res://.import/tsunami.png-7446101d1b4c3263f89d2d212a6ec37f.stex" ]
 
 [params]
 

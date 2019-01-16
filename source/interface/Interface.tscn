@@ -69,6 +69,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="DangerLevelBar" parent="Quadrant1" index="0" instance=ExtResource( 1 )]
 
+visible = false
 margin_left = 1.0
 margin_top = 192.0
 margin_right = 41.0
@@ -95,6 +96,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="DangerLevelBar" parent="Quadrant2" index="0" instance=ExtResource( 1 )]
 
+visible = false
 margin_left = 1.0
 margin_top = 192.0
 margin_right = 41.0
@@ -122,6 +124,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="DangerLevelBar" parent="Quadrant3" index="0" instance=ExtResource( 1 )]
 
+visible = false
 margin_left = 1.0
 margin_top = 192.0
 margin_right = 41.0
@@ -130,6 +133,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Quadrant4" type="Control" parent="." index="5"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -148,6 +152,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="DangerLevelBar" parent="Quadrant4" index="0" instance=ExtResource( 1 )]
 
+visible = false
 margin_left = 1.0
 margin_top = 192.0
 margin_right = 41.0

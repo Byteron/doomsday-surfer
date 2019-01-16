@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex"
+path="res://.import/lava.png-6e248ce536970c973a2a42779f93d39c.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept2.png"
-dest_files=[ "res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex" ]
+source_file="res://graphics/terrain/lava.png"
+dest_files=[ "res://.import/lava.png-6e248ce536970c973a2a42779f93d39c.stex" ]
 
 [params]
 

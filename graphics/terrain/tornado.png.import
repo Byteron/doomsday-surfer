@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex"
+path="res://.import/tornado.png-35c90a1e7a3a4e041073c729e0f8116e.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept2.png"
-dest_files=[ "res://.import/scenario_concept2.png-d55c15af6895bfa725daf1e04330fa49.stex" ]
+source_file="res://graphics/terrain/tornado.png"
+dest_files=[ "res://.import/tornado.png-35c90a1e7a3a4e041073c729e0f8116e.stex" ]
 
 [params]
 
