@@ -105,6 +105,14 @@ editor/display_folded = true
 
 editor/display_folded = true
 
+[connection signal="timeout" from="Timers/Tsunami" to="." method="_on_Tsunami_timeout"]
+
+[connection signal="timeout" from="Timers/Lava" to="." method="_on_Lava_timeout"]
+
+[connection signal="timeout" from="Timers/Earthquake" to="." method="_on_Earthquake_timeout"]
+
+[connection signal="timeout" from="Timers/Tornado" to="." method="_on_Tornado_timeout"]
+
 
 [editable path="Interface"]
 [editable path="Interface/BorderRight/DoomsdaySurfer"]

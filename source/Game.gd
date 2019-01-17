@@ -71,3 +71,17 @@ func _on_Survivors_pressed(data):
 	units.add_child(unit)
 	$Interface/BorderRight/Survivors.hide()
 
+func _on_Tsunami_timeout():
+	print("Tsunami Timeout")
+
+
+func _on_Lava_timeout():
+	print("Lava Timeout")
+
+
+func _on_Earthquake_timeout():
+	print("Earthquake Timeout")
+
+
+func _on_Tornado_timeout():
+	print("Tornado Timeout")
