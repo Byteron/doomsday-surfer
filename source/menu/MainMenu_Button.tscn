@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://source/MainMenu/MainMenu_ButtonFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://source/MainMenu/MainMenu_Button_Select.tres" type="StyleBox" id=2]
-[ext_resource path="res://source/MainMenu/MainMenu_Button_Down.tres" type="StyleBox" id=3]
-[ext_resource path="res://source/MainMenu/MainMenu_Button_Up.tres" type="StyleBox" id=4]
+[ext_resource path="res://graphics/fonts/MainMenu_ButtonFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/menu/MainMenu_Button_Select.tres" type="StyleBox" id=2]
+[ext_resource path="res://source/menu/MainMenu_Button_Down.tres" type="StyleBox" id=3]
+[ext_resource path="res://source/menu/MainMenu_Button_Up.tres" type="StyleBox" id=4]
+
+
 
 [sub_resource type="Theme" id=1]
 
