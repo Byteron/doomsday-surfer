@@ -1,5 +1,7 @@
 extends Node2D
 
+enum QUADRANT { TSUNAMI = 0, LAVA = 1, TORNADO = 2, EARTHQUAKE = 3}
+
 var active_unit = null
 
 onready var grid = $Grid
@@ -72,30 +74,34 @@ func _on_Survivors_pressed(data):
 	$Interface/BorderRight/Survivors.hide()
 
 func _on_Tsunami_timeout():
-	if Global.quadrants.tsunami.level < 4:
-		Global.quadrants.tsunami.level += 1
-		grid.set_cellv(Global.quadrants.tsunami.cells[Global.quadrants.tsunami.level - 1], 0)
+	if grid.get_quadrant_level(TSUNAMI) < 4:
+		grid.increase_quadrant_level(TSUNAMI)
+		var loc = grid.get_quadrant_location(TSUNAMI, grid.get_quadrant_level(TSUNAMI) - 1)
+		grid.set_cellv(loc.cell, 0)
 	check_game_over()
 
 
 func _on_Lava_timeout():
-	if Global.quadrants.lava.level < 4:
-		Global.quadrants.lava.level += 1
-		grid.set_cellv(Global.quadrants.lava.cells[Global.quadrants.lava.level - 1], 2)
+	if grid.get_quadrant_level(LAVA) < 4:
+		grid.increase_quadrant_level(LAVA)
+		var loc = grid.get_quadrant_location(LAVA, grid.get_quadrant_level(LAVA) - 1)
+		grid.set_cellv(loc.cell, 2)
 	check_game_over()
 
 
 func _on_Earthquake_timeout():
-	if Global.quadrants.earthquake.level < 4:
-		Global.quadrants.earthquake.level += 1
-		grid.set_cellv(Global.quadrants.earthquake.cells[Global.quadrants.earthquake.level - 1], 6)
+	if grid.get_quadrant_level(EARTHQUAKE)  < 4:
+		grid.increase_quadrant_level(EARTHQUAKE)
+		var loc = grid.get_quadrant_location(EARTHQUAKE, grid.get_quadrant_level(EARTHQUAKE) - 1)
+		grid.set_cellv(loc.cell, 6)
 	check_game_over()
 
 
 func _on_Tornado_timeout():
-	if Global.quadrants.tornado.level < 4:
-		Global.quadrants.tornado.level += 1
-		grid.set_cellv(Global.quadrants.tornado.cells[Global.quadrants.tornado.level - 1], 4)
+	if grid.get_quadrant_level(TORNADO)  < 4:
+		grid.increase_quadrant_level(TORNADO)
+		var loc = grid.get_quadrant_location(TORNADO, grid.get_quadrant_level(TORNADO) - 1)
+		grid.set_cellv(loc.cell, 4)
 	check_game_over()
 
 func check_game_over():
@@ -103,7 +109,7 @@ func check_game_over():
 		game_over()
 
 func all_quadrants_destroyed():
-	for quadrant in Global.quadrants.values():
+	for quadrant in grid.quadrants:
 		if quadrant.level < 4:
 			return false
 	return true
