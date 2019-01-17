@@ -72,16 +72,41 @@ func _on_Survivors_pressed(data):
 	$Interface/BorderRight/Survivors.hide()
 
 func _on_Tsunami_timeout():
-	print("Tsunami Timeout")
+	if Global.quadrants.tsunami.level < 4:
+		Global.quadrants.tsunami.level += 1
+		grid.set_cellv(Global.quadrants.tsunami.cells[Global.quadrants.tsunami.level - 1], 0)
+	check_game_over()
 
 
 func _on_Lava_timeout():
-	print("Lava Timeout")
+	if Global.quadrants.lava.level < 4:
+		Global.quadrants.lava.level += 1
+		grid.set_cellv(Global.quadrants.lava.cells[Global.quadrants.lava.level - 1], 2)
+	check_game_over()
 
 
 func _on_Earthquake_timeout():
-	print("Earthquake Timeout")
+	if Global.quadrants.earthquake.level < 4:
+		Global.quadrants.earthquake.level += 1
+		grid.set_cellv(Global.quadrants.earthquake.cells[Global.quadrants.earthquake.level - 1], 6)
+	check_game_over()
 
 
 func _on_Tornado_timeout():
-	print("Tornado Timeout")
+	if Global.quadrants.tornado.level < 4:
+		Global.quadrants.tornado.level += 1
+		grid.set_cellv(Global.quadrants.tornado.cells[Global.quadrants.tornado.level - 1], 4)
+	check_game_over()
+
+func check_game_over():
+	if all_quadrants_destroyed():
+		game_over()
+
+func all_quadrants_destroyed():
+	for quadrant in Global.quadrants.values():
+		if quadrant.level < 4:
+			return false
+	return true
+
+func game_over():
+	get_tree().change_scene(Global.MainMenu)

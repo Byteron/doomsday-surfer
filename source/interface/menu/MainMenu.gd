@@ -2,7 +2,7 @@ extends Node
 
 func _on_Button_pressed():
 	print("StartGame pressed")
-	get_tree().change_scene("res://source/Game.tscn")
+	get_tree().change_scene(Global.Game)
 
 func _on_Button2_pressed():
 	print("Options pressed")
