@@ -5,6 +5,13 @@ var active_unit = null
 onready var grid = $Grid
 onready var units = $Units
 
+onready var tsunami_timer = $Timers/Tsunami
+onready var lava_timer = $Timers/Lava
+onready var earthquake_timer = $Timers/Earthquake
+onready var tornado_timer = $Timers/Tornado
+
+onready var interface = $Interface
+
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("click_left"):
 		var mouse_cell = grid.world_to_map(get_global_mouse_position())
@@ -27,11 +34,17 @@ func _ready():
 	$Interface/Quadrant3/DangerLevelBar.level = 3
 	$Interface/Quadrant4/DangerLevelBar.level = 4
 	
-	$Interface/UnitButtons/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
-	$Interface/UnitButtons/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
-	$Interface/UnitButtons/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
-	$Interface/UnitButtons/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
+	$Interface/BorderRight/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
+	$Interface/BorderRight/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
+	$Interface/BorderRight/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
+	$Interface/BorderRight/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
 
+func _process(delta):
+	interface.update_tsunami_time(tsunami_timer.time_left)
+	interface.update_lava_time(lava_timer.time_left)
+	interface.update_earthquake_time(earthquake_timer.time_left)
+	interface.update_tornado_time(tornado_timer.time_left)
+	
 func set_active_unit(unit):
 	active_unit = unit
 
@@ -39,22 +52,22 @@ func _on_DoomsdaySurfer_pressed(data):
 	var unit = Global.Unit.instance()
 	unit.initialize(data, grid.get_location_at(Vector2(1, 0)))
 	units.add_child(unit)
-	$Interface/UnitButtons/DoomsdaySurfer.hide()
+	$Interface/BorderRight/DoomsdaySurfer.hide()
 func _on_KaijuPlant_pressed(data):
 	var unit = Global.Unit.instance()
 	unit.initialize(data, grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
-	$Interface/UnitButtons/KaijuPlant.hide()
+	$Interface/BorderRight/KaijuPlant.hide()
 
 func _on_PowerCollector_pressed(data):
 	var unit = Global.Unit.instance()
 	unit.initialize(data, grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
-	$Interface/UnitButtons/PowerCollector.hide()
+	$Interface/BorderRight/PowerCollector.hide()
 
 func _on_Survivors_pressed(data):
 	var unit = Global.Unit.instance()
 	unit.initialize(data, grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
-	$Interface/UnitButtons/Survivors.hide()
+	$Interface/BorderRight/Survivors.hide()
 

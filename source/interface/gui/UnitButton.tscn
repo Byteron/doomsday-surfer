@@ -24,6 +24,9 @@ group = null
 flat = true
 align = 1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
