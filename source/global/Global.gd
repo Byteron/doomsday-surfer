@@ -3,10 +3,10 @@ extends Node
 # scenes
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/Game.tscn"
-var Story = "res://source/Story_text.tscn"
+var Story = "res://source/StoryText.tscn"
 var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
-var GameOver = "res://source/interface/menu/Game_over.tscn"
+var GameOver = "res://source/interface/menu/GameOver.tscn"
 var Tutorial = "res://source/interface/menu/Tutorial.tscn"
 var Ending = "res://source/interface/menu/Ending.tscn"
 
@@ -18,7 +18,7 @@ var Survivors = load("res://source/units/Survivors.tscn")
 
 var EnemyKaiju = load("res://source/units/EnemyKaiju.tscn")
 
-var Disaster = load("res://source/Disaster.tscn")
+var Disaster = load("res://source/items/Disaster.tscn")
 var PowerCell = load("res://source/items/PowerCell.tscn")
 
 # textures
