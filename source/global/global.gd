@@ -4,6 +4,7 @@ extends Node
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/Game.tscn"
 var Story = "res://source/Story_text.tscn"
+var Options = "res://source/interface/menu/Options.tscn"
 
 # classes
 var Unit = load("res://source/units/Unit.tscn")

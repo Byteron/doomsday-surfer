@@ -6,7 +6,7 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	print("Options pressed")
-	#get_tree().change_scene("PATH TO OPTINS GOES HERE")
+	get_tree().change_scene(Global.Options)
 
 func _on_Button3_pressed():
 	print("Exit pressed")
