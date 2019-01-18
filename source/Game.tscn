@@ -1,19 +1,19 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/Game.gd" type="Script" id=1]
-[ext_resource path="res://source/ProgressBar.gd" type="Script" id=2]
-[ext_resource path="res://sounds/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=3]
-[ext_resource path="res://source/Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/tilesets/TileSet.tres" type="TileSet" id=5]
-[ext_resource path="res://source/Grid.gd" type="Script" id=6]
-[ext_resource path="res://source/Quadrant.gd" type="Script" id=7]
-[ext_resource path="res://source/interface/gui/Interface.tscn" type="PackedScene" id=8]
-[ext_resource path="res://source/interface/gui/Interface.gd" type="Script" id=9]
+[ext_resource path="res://sounds/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=2]
+[ext_resource path="res://source/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/tilesets/TileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://source/Grid.gd" type="Script" id=5]
+[ext_resource path="res://source/Quadrant.gd" type="Script" id=6]
+[ext_resource path="res://source/interface/gui/Interface.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/interface/gui/Interface.gd" type="Script" id=8]
+[ext_resource path="res://source/ProgressBar.gd" type="Script" id=9]
 [ext_resource path="res://graphics/units/kaiju_plant.png" type="Texture" id=10]
 [ext_resource path="res://graphics/units/power_collector.png" type="Texture" id=11]
 [ext_resource path="res://graphics/units/survivors.png" type="Texture" id=12]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -61,73 +61,21 @@ wait_time = 3.0
 one_shot = false
 autostart = true
 
-[node name="BreakPoint" type="Timer" parent="Timers" index="6"]
-
-process_mode = 1
-wait_time = 60.0
-one_shot = true
-autostart = true
-
-[node name="ProgressBar" type="ProgressBar" parent="Timers" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 11.0
-margin_top = 316.0
-margin_right = 27.0
-margin_bottom = 332.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-percent_visible = true
-script = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="Timers/ProgressBar" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Break point"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Background" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Background" parent="." index="2" instance=ExtResource( 3 )]
 
 [node name="Grid" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 1
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -143,7 +91,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 1, 1, 0, 2, 1, 0, 3, 3, 0, 4, 3, 0, 65537, 1, 0, 65538, 1, 0, 65539, 3, 0, 65540, 3, 0, 131073, 5, 0, 131074, 5, 0, 131075, 7, 0, 131076, 7, 0, 196609, 5, 0, 196610, 5, 0, 196611, 7, 0, 196612, 7, 0 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Units" type="Node2D" parent="." index="4"]
@@ -152,24 +100,91 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Q1" type="Node2D" parent="." index="6"]
 
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="Q2" type="Node2D" parent="." index="7"]
 
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="Q3" type="Node2D" parent="." index="8"]
 
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="Q4" type="Node2D" parent="." index="9"]
 
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
-[node name="Interface" parent="." index="10" instance=ExtResource( 8 )]
+[node name="Interface" parent="." index="10" instance=ExtResource( 7 )]
 
-editor/display_folded = true
+script = ExtResource( 8 )
+
+[node name="Node2D" type="CanvasLayer" parent="Interface" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Label" type="Label" parent="Interface/Node2D" index="0"]
+
+modulate = Color( 0.972656, 0.72124, 0.0531921, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 227.0
+margin_right = 84.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "BREAK POINT"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_styles" ]
+
+[node name="ProgressBar" type="ProgressBar" parent="Interface/Node2D" index="1"]
+
+modulate = Color( 0.921875, 0.55479, 0.0828247, 1 )
+self_modulate = Color( 0.898438, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 246.0
+margin_right = 117.0
+margin_bottom = 282.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_colors/font_color_shadow = Color( 0.917969, 0.808433, 0.0932312, 1 )
+min_value = 0.0
+max_value = 60.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = true
 script = ExtResource( 9 )
+_sections_unfolded = [ "Material", "Percent", "Visibility", "custom_colors" ]
+
+[node name="BreakPoint" type="Timer" parent="Interface/Node2D/ProgressBar" index="0"]
+
+process_mode = 1
+wait_time = 60.0
+one_shot = true
+autostart = true
 
 [node name="TextureRect" parent="Interface/BorderRight/KaijuPlant" index="0"]
 
@@ -203,7 +218,7 @@ editor/display_folded = true
 
 [connection signal="timeout" from="Timers/EnemyKaijuTimer" to="." method="_on_EnemyKaijuTimer_timeout"]
 
-[connection signal="timeout" from="Timers/BreakPoint" to="." method="_on_BreakPoint_timeout"]
+[connection signal="timeout" from="Interface/Node2D/ProgressBar/BreakPoint" to="." method="_on_BreakPoint_timeout"]
 
 
 [editable path="Interface"]
