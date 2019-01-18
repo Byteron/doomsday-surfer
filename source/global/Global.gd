@@ -11,7 +11,11 @@ var Tutorial = "res://source/interface/menu/Tutorial.tscn"
 var Ending = "res://source/interface/menu/Ending.tscn"
 
 # classes
-var Unit = load("res://source/units/Unit.tscn")
+var DoomsdaySurfer = load("res://source/units/DoomsdaySurfer.tscn")
+var KaijuPlant = load("res://source/units/KaijuPlant.tscn")
+var PowerCollector = load("res://source/units/PowerCollector.tscn")
+var Survivors = load("res://source/units/Survivors.tscn")
+
 var Disaster = load("res://source/Disaster.tscn")
 var PowerCell = load("res://source/items/PowerCell.tscn")
 

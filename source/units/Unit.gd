@@ -1,13 +1,11 @@
-extends Sprite
+extends AnimatedSprite
 
 signal power_cell_collected()
 signal surfer_moved(quadrant)
 
 var location = null
 
-func initialize(data, loc):
-	self.name = data.name
-	self.texture = data.tex
+func initialize(loc):
 	self.location = loc
 	position = location.position
 	location.unit = self

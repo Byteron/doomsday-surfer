@@ -4,6 +4,7 @@ enum QUADRANT { TSUNAMI = 0, LAVA = 1, TORNADO = 2, EARTHQUAKE = 3}
 
 var active_unit = null
 var stopped_timer = null
+var enemy_kaiju = null
 
 onready var grid = $Grid
 onready var units = $Units
@@ -58,30 +59,30 @@ func set_active_unit(unit):
 	active_unit = unit
 
 func _on_DoomsdaySurfer_pressed(data):
-	var unit = Global.Unit.instance()
+	var unit = Global.DoomsdaySurfer.instance()
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
 	var loc = grid.get_location_at(Vector2(1, 0))
 	_on_surfer_moved(loc.quadrant)
-	unit.initialize(data, loc)
+	unit.initialize(loc)
 	units.add_child(unit)
 	$Interface/BorderRight/DoomsdaySurfer.hide()
 
 func _on_KaijuPlant_pressed(data):
-	var unit = Global.Unit.instance()
-	unit.initialize(data, grid.get_location_at(Vector2(3, 0)))
+	var unit = Global.KaijuPlant.instance()
+	unit.initialize(grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
 	$Interface/BorderRight/KaijuPlant.hide()
 
 func _on_PowerCollector_pressed(data):
-	var unit = Global.Unit.instance()
+	var unit = Global.PowerCollector.instance()
 	unit.connect("power_cell_collected", self, "_on_power_cell_collected")
-	unit.initialize(data, grid.get_location_at(Vector2(1, 2)))
+	unit.initialize(grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
 	$Interface/BorderRight/PowerCollector.hide()
 
 func _on_Survivors_pressed(data):
-	var unit = Global.Unit.instance()
-	unit.initialize(data, grid.get_location_at(Vector2(3, 2)))
+	var unit = Global.Survivors.instance()
+	unit.initialize(grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
 	$Interface/BorderRight/Survivors.hide()
 
@@ -152,6 +153,9 @@ func _on_PowerCell_timeout():
 	power_cell.position = loc.position
 	loc.power_cell = power_cell
 	power_cells.add_child(power_cell)
+
+func _on_EnemyKaijuTimer_timeout():
+	pass # replace with function body
 
 func _on_energy_bar_charged():
 	var quadrant = grid.get_quadrant_with_highest_danger_level()

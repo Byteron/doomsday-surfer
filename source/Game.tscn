@@ -50,7 +50,7 @@ autostart = true
 [node name="PowerCell" type="Timer" parent="Timers" index="4"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = false
 autostart = true
 
@@ -200,6 +200,8 @@ editor/display_folded = true
 [connection signal="timeout" from="Timers/Earthquake" to="." method="_on_Earthquake_timeout"]
 
 [connection signal="timeout" from="Timers/PowerCell" to="." method="_on_PowerCell_timeout"]
+
+[connection signal="timeout" from="Timers/EnemyKaijuTimer" to="." method="_on_EnemyKaijuTimer_timeout"]
 
 [connection signal="timeout" from="Timers/BreakPoint" to="." method="_on_BreakPoint_timeout"]
 
