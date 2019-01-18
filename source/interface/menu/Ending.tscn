@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://source/interface/menu/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://graphics/screen_texture.png" type="Texture" id=2]
 
-[node name="tutorial" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -13,8 +13,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 768.0
-margin_bottom = 612.0
+margin_left = 1.0
+margin_top = 3.0
+margin_right = 769.0
+margin_bottom = 615.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -30,10 +32,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 206.0
-margin_top = 50.0
-margin_right = 547.0
-margin_bottom = 365.0
+margin_left = 274.0
+margin_top = 49.0
+margin_right = 505.0
+margin_bottom = 219.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -46,7 +48,9 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Click the units and then click on the tile you want to place them"
+text = "Finally the surfer reached the wave break point and ENIGMAII was so atonished for the stupidity of the surfer that entered an infinity logic loop and his circuit fried and then the prophecy of the tribal surfer cult was finally fullfilled.
+
+Now time to rebuild humankind."
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -58,10 +62,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 263.0
-margin_top = 398.0
-margin_right = 481.0
-margin_bottom = 418.0
+margin_left = 143.0
+margin_top = 307.0
+margin_right = 668.0
+margin_bottom = 327.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -73,10 +77,37 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "I'm saving humankind this time!"
+text = "Whoever worte this can be a perfect shitty hollywood screenwriter, take me out!"
+flat = false
+align = 1
+
+[node name="Button2" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 358.0
+margin_top = 364.0
+margin_right = 451.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "I want more!"
 flat = false
 align = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 
 

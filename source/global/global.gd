@@ -8,6 +8,7 @@ var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
 var GameOver = "res://source/interface/menu/Game_over.tscn"
 var Tutorial = "res://source/interface/menu/Tutorial.tscn"
+var Ending = "res://source/interface/menu/Ending.tscn"
 
 # classes
 var Unit = load("res://source/units/Unit.tscn")
