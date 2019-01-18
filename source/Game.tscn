@@ -13,7 +13,7 @@
 [ext_resource path="res://graphics/units/power_collector.png" type="Texture" id=11]
 [ext_resource path="res://graphics/units/survivors.png" type="Texture" id=12]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -33,17 +33,17 @@ wait_time = 8.0
 one_shot = false
 autostart = true
 
-[node name="Earthquake" type="Timer" parent="Timers" index="2"]
-
-process_mode = 1
-wait_time = 10.0
-one_shot = false
-autostart = true
-
-[node name="Tornado" type="Timer" parent="Timers" index="3"]
+[node name="Tornado" type="Timer" parent="Timers" index="2"]
 
 process_mode = 1
 wait_time = 7.0
+one_shot = false
+autostart = true
+
+[node name="Earthquake" type="Timer" parent="Timers" index="3"]
+
+process_mode = 1
+wait_time = 10.0
 one_shot = false
 autostart = true
 
@@ -195,9 +195,9 @@ editor/display_folded = true
 
 [connection signal="timeout" from="Timers/Lava" to="." method="_on_Lava_timeout"]
 
-[connection signal="timeout" from="Timers/Earthquake" to="." method="_on_Earthquake_timeout"]
-
 [connection signal="timeout" from="Timers/Tornado" to="." method="_on_Tornado_timeout"]
+
+[connection signal="timeout" from="Timers/Earthquake" to="." method="_on_Earthquake_timeout"]
 
 [connection signal="timeout" from="Timers/PowerCell" to="." method="_on_PowerCell_timeout"]
 

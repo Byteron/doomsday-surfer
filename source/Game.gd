@@ -3,6 +3,7 @@ extends Node2D
 enum QUADRANT { TSUNAMI = 0, LAVA = 1, TORNADO = 2, EARTHQUAKE = 3}
 
 var active_unit = null
+var stopped_timer = null
 
 onready var grid = $Grid
 onready var units = $Units
@@ -58,7 +59,10 @@ func set_active_unit(unit):
 
 func _on_DoomsdaySurfer_pressed(data):
 	var unit = Global.Unit.instance()
-	unit.initialize(data, grid.get_location_at(Vector2(1, 0)))
+	unit.connect("surfer_moved", self, "_on_surfer_moved")
+	var loc = grid.get_location_at(Vector2(1, 0))
+	_on_surfer_moved(loc.quadrant)
+	unit.initialize(data, loc)
 	units.add_child(unit)
 	$Interface/BorderRight/DoomsdaySurfer.hide()
 
@@ -81,6 +85,12 @@ func _on_Survivors_pressed(data):
 	units.add_child(unit)
 	$Interface/BorderRight/Survivors.hide()
 
+func _on_surfer_moved(quadrant):
+	if stopped_timer:
+		stopped_timer.start()
+	stopped_timer = _get_quadrant_timer(quadrant)
+	stopped_timer.stop()
+	
 func _on_power_cell_collected():
 	interface.increase_power_level()
 
@@ -150,6 +160,9 @@ func _on_energy_bar_charged():
 			loc.disaster.queue_free()
 			loc.disaster = null
 	quadrant.level = 0
+
+func _get_quadrant_timer(quadrant):
+	return $Timers.get_child(quadrant)
 
 func _kill_unit(loc):
 	if loc.unit:

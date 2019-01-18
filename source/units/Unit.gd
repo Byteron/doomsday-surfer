@@ -1,6 +1,7 @@
 extends Sprite
 
 signal power_cell_collected()
+signal surfer_moved(quadrant)
 
 var location = null
 
@@ -17,6 +18,7 @@ func move_to(loc):
 	self.position = location.position
 	location.unit = self
 	power_collector(loc)
+	surfer(loc)
 
 func power_collector(loc):
 	if name == "PowerCollector":
@@ -24,3 +26,8 @@ func power_collector(loc):
 			loc.power_cell.queue_free()
 			loc.power_cell = null
 			emit_signal("power_cell_collected")
+
+func surfer(loc):
+	if name == "DoomsdaySurfer":
+		emit_signal("surfer_moved", loc.quadrant)
+		print(loc.quadrant)
