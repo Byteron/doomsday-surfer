@@ -1,9 +1,9 @@
 extends Control
 
 func _on_Button_pressed():
-	print("StartGame pressed")
-	get_tree().change_scene(Global.Story)
+	print("Soul sold")
+	get_tree().change_scene(Global.Sold)
 
 func _on_Button2_pressed():
-	print("Options pressed")
-	get_tree().change_scene(Global.Options)
+	print("Soul Kept")
+	get_tree().change_scene(Global.MainMenu)
