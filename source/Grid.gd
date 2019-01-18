@@ -78,7 +78,7 @@ func setup_quadrants():
 		}
 	]
 	
-	var i = 1
+	var i = 0
 	for quadrant in quadrants:
 		for loc in quadrant.locations:
 			loc.quadrant = i
