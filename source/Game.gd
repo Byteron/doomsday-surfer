@@ -159,6 +159,8 @@ func _kill_unit(loc):
 			_game_over()
 		loc.unit.queue_free()
 		loc.unit = null
+		set_active_unit(null)
+		
 
 func _check_game_over():
 	if _all_quadrants_destroyed():
