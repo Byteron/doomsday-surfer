@@ -4,7 +4,9 @@ enum QUADRANT { TSUNAMI = 0, LAVA = 1, TORNADO = 2, EARTHQUAKE = 3}
 
 var active_unit = null
 var stopped_timer = null
+
 var enemy_kaiju = null
+var marker = null
 
 onready var grid = $Grid
 onready var units = $Units
@@ -38,16 +40,21 @@ func _unhandled_input(event):
 		set_active_unit(null)
 
 func _ready():
+	_on_DoomsdaySurfer_pressed(Global.unit_data.doomsday_surfer)
+	_on_KaijuPlant_pressed(Global.unit_data.kaiju_plant)
+	_on_PowerCollector_pressed(Global.unit_data.power_collector)
+	_on_Survivors_pressed(Global.unit_data.survivors)
+	
+	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
+	place_marker()
 #	$Interface/Quadrant1/DangerLevelBar.level = 1
 #	$Interface/Quadrant2/DangerLevelBar.level = 2
 #	$Interface/Quadrant3/DangerLevelBar.level = 3
 #	$Interface/Quadrant4/DangerLevelBar.level = 4
-#
-	$Interface/BorderRight/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
-	$Interface/BorderRight/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
-	$Interface/BorderRight/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
-	$Interface/BorderRight/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
-	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
+#	$Interface/BorderRight/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
+#	$Interface/BorderRight/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
+#	$Interface/BorderRight/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
+#	$Interface/BorderRight/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
 
 func _process(delta):
 	interface.update_tsunami_time(tsunami_timer.time_left)
@@ -161,18 +168,14 @@ func _on_PowerCell_timeout():
 	power_cells.add_child(power_cell)
 
 func _on_EnemyKaijuTimer_timeout():
-	var free_locations = grid.get_free_locations_enemy()
-	if free_locations.size() == 0:
-		return
-	randomize()
-	var loc = free_locations[randi() % free_locations.size()]
 	if enemy_kaiju:
-		enemy_kaiju.move_to(loc)
+		enemy_kaiju.move_to(marker.location)
 	else:
 		enemy_kaiju = Global.EnemyKaiju.instance()
 		enemy_kaiju.connect("killed_unit", self, "_on_enemy_kaiju_killed_unit")
-		enemy_kaiju.initialize(loc)
+		enemy_kaiju.initialize(marker.location)
 		add_child(enemy_kaiju)
+	place_marker()
 
 func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
@@ -184,6 +187,25 @@ func _on_energy_bar_charged():
 			loc.disaster.queue_free()
 			loc.disaster = null
 	quadrant.level = 0
+
+func place_marker():
+	var free_locations = grid.get_free_locations_enemy()
+	if free_locations.size() == 0:
+		return
+	var next_loc = free_locations[randi() % free_locations.size()]
+	if not marker:
+		var loc = free_locations[randi() % free_locations.size()]
+		marker = Global.Marker.instance()
+		marker.position = loc.position
+		marker.location = loc
+		marker.next_location = next_loc
+		add_child(marker)
+	else:
+		var loc = marker.next_location
+		marker.position = loc.position
+		marker.location = loc
+		marker.next_location = next_loc
+	marker.animate()
 
 func _get_quadrant_timer(quadrant):
 	return $Timers.get_child(quadrant)
