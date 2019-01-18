@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/interface/menu/Options.gd" type="Script" id=1]
 [ext_resource path="res://graphics/screen_texture.png" type="Texture" id=2]
 [ext_resource path="res://source/interface/menu/MainMenu_Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/Laughter-Mike_Koenig-360558723.wav" type="AudioStream" id=4]
 
 [node name="Control" type="Control"]
 
@@ -109,6 +110,15 @@ margin_top = 0.0
 margin_right = 836.0
 margin_bottom = 100.0
 text = "Keep Soul"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
 
