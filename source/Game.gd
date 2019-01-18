@@ -134,6 +134,8 @@ func _on_Tornado_timeout():
 
 func _on_PowerCell_timeout():
 	var free_locations = grid.get_free_locations()
+	if free_locations.size() == 0:
+		return
 	randomize()
 	var loc = free_locations[randi() % free_locations.size()]
 	var power_cell = Global.PowerCell.instance()
