@@ -173,4 +173,4 @@ func _all_quadrants_destroyed():
 	return true
 
 func _game_over():
-	get_tree().change_scene(Global.Sold)
+	get_tree().change_scene(Global.GameOver)

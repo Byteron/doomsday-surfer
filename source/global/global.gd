@@ -6,6 +6,8 @@ var Game = "res://source/Game.tscn"
 var Story = "res://source/Story_text.tscn"
 var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
+var GameOver = "res://source/interface/menu/Game_over.tscn"
+var Tutorial = "res://source/interface/menu/Tutorial.tscn"
 
 # classes
 var Unit = load("res://source/units/Unit.tscn")
