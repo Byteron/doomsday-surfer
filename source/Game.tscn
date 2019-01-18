@@ -12,7 +12,7 @@
 [ext_resource path="res://graphics/units/power_collector.png" type="Texture" id=10]
 [ext_resource path="res://graphics/units/survivors.png" type="Texture" id=11]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -63,7 +63,7 @@ autostart = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 2 )
-volume_db = -20.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
