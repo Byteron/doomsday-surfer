@@ -1,6 +1,6 @@
 extends TileMap
 
-const WIDTH = 4
+const WIDTH = 6
 const HEIGHT = 4
 const OFFSET = Vector2(64, 64)
 
@@ -29,40 +29,40 @@ func setup_quadrants():
 			name = "Tsunami Quadrant",
 			level = 0, 
 			locations = [
+				get_location_at(Vector2(2, 1)),
 				get_location_at(Vector2(1, 1)),
-				get_location_at(Vector2(0, 1)),
-				get_location_at(Vector2(1, 0)),
-				get_location_at(Vector2(0, 0))
+				get_location_at(Vector2(2, 0)),
+				get_location_at(Vector2(1, 0))
 			]
 		},
 		{
 			name = "Lava Quadrant",
 			level = 0,
 			locations = [
+				get_location_at(Vector2(4, 1)),
 				get_location_at(Vector2(3, 1)),
-				get_location_at(Vector2(2, 1)),
-				get_location_at(Vector2(3, 0)),
-				get_location_at(Vector2(2, 0))
+				get_location_at(Vector2(4, 0)),
+				get_location_at(Vector2(3, 0))
 			]
 		},
 		{
 			name = "Earthquake Quadrant",
 			level = 0,
 			locations = [
+				get_location_at(Vector2(2, 3)),
 				get_location_at(Vector2(1, 3)),
-				get_location_at(Vector2(0, 3)),
-				get_location_at(Vector2(1, 2)),
-				get_location_at(Vector2(0, 2))
+				get_location_at(Vector2(2, 2)),
+				get_location_at(Vector2(1, 2))
 			]
 		},
 		{
 			name = "Tornado Quadrant",
 			level = 0,
 			locations = [
+				get_location_at(Vector2(4, 3)),
 				get_location_at(Vector2(3, 3)),
-				get_location_at(Vector2(2, 3)),
-				get_location_at(Vector2(3, 2)),
-				get_location_at(Vector2(2, 2))
+				get_location_at(Vector2(4, 2)),
+				get_location_at(Vector2(3, 2))
 			]
 		}
 	]

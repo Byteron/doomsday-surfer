@@ -7,6 +7,11 @@ var active_unit = null
 onready var grid = $Grid
 onready var units = $Units
 
+onready var q1 = $Q1
+onready var q2 = $Q2
+onready var q3 = $Q3
+onready var q4 = $Q4
+
 onready var tsunami_timer = $Timers/Tsunami
 onready var lava_timer = $Timers/Lava
 onready var earthquake_timer = $Timers/Earthquake
@@ -16,10 +21,10 @@ onready var interface = $Interface
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("click_left"):
-		var mouse_cell = grid.world_to_map(get_global_mouse_position())
+		var mouse_cell = grid.world_to_map(get_local_mouse_position())
 		var mouse_location = grid.get_location_at(mouse_cell)
 		if active_unit:
-			if not mouse_location.unit:
+			if not mouse_location.unit and not mouse_location.disaster:
 				active_unit.move_to(mouse_location)
 				set_active_unit(null)
 		elif not active_unit: 
@@ -77,42 +82,70 @@ func _on_Tsunami_timeout():
 	if grid.get_quadrant_level(TSUNAMI) < 4:
 		grid.increase_quadrant_level(TSUNAMI)
 		var loc = grid.get_quadrant_location(TSUNAMI, grid.get_quadrant_level(TSUNAMI) - 1)
-		grid.set_cellv(loc.cell, 0)
-	check_game_over()
+		# grid.set_cellv(loc.cell, 0)
+		var disaster = Global.Disaster.instance()
+		disaster.initialize(Global.tsunami_tex, loc.position)
+		loc.disaster = disaster
+		q1.add_child(disaster)
+		_kill_unit(loc)
+	_check_game_over()
 
 
 func _on_Lava_timeout():
 	if grid.get_quadrant_level(LAVA) < 4:
 		grid.increase_quadrant_level(LAVA)
 		var loc = grid.get_quadrant_location(LAVA, grid.get_quadrant_level(LAVA) - 1)
-		grid.set_cellv(loc.cell, 2)
-	check_game_over()
-
+		#grid.set_cellv(loc.cell, 2)
+		var disaster = Global.Disaster.instance()
+		disaster.initialize(Global.lava_tex, loc.position)
+		loc.disaster = disaster
+		q2.add_child(disaster)
+		_kill_unit(loc)
+	_check_game_over()
 
 func _on_Earthquake_timeout():
 	if grid.get_quadrant_level(EARTHQUAKE)  < 4:
 		grid.increase_quadrant_level(EARTHQUAKE)
 		var loc = grid.get_quadrant_location(EARTHQUAKE, grid.get_quadrant_level(EARTHQUAKE) - 1)
-		grid.set_cellv(loc.cell, 6)
-	check_game_over()
+		# grid.set_cellv(loc.cell, 6)
+		var disaster = Global.Disaster.instance()
+		disaster.initialize(Global.earthquake_tex, loc.position)
+		loc.disaster = disaster
+		q3.add_child(disaster)
+		_kill_unit(loc)
+	_check_game_over()
 
 
 func _on_Tornado_timeout():
 	if grid.get_quadrant_level(TORNADO)  < 4:
 		grid.increase_quadrant_level(TORNADO)
 		var loc = grid.get_quadrant_location(TORNADO, grid.get_quadrant_level(TORNADO) - 1)
-		grid.set_cellv(loc.cell, 4)
-	check_game_over()
+		# grid.set_cellv(loc.cell, 4)
+		var disaster = Global.Disaster.instance()
+		disaster.initialize(Global.tornado_tex, loc.position)
+		loc.disaster = disaster
+		q4.add_child(disaster)
+		_kill_unit(loc)
+	_check_game_over()
 
-func check_game_over():
-	if all_quadrants_destroyed():
-		game_over()
+func _kill_unit(loc):
+	if loc.unit:
+		if loc.unit.name == "EnemyKaiju":
+			return
+		if loc.unit.name == "Survivors":
+			_game_over()
+		loc.unit.queue_free()
+		loc.unit = null
 
-func all_quadrants_destroyed():
+func _check_game_over():
+	if _all_quadrants_destroyed():
+		_game_over()
+
+func _all_quadrants_destroyed():
 	for quadrant in grid.quadrants:
 		if quadrant.level < 4:
 			return false
 	return true
 
-func game_over():
+func _game_over():
 	get_tree().change_scene(Global.MainMenu)

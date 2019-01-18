@@ -1,10 +1,20 @@
 extends Node
 
+# scenes
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/Game.tscn"
 
+# classes
 var Unit = load("res://source/units/Unit.tscn")
+var Disaster = load("res://source/Disaster.tscn")
 
+# textures
+var tsunami_tex = load("res://graphics/terrain/tsunami.png")
+var lava_tex = load("res://graphics/terrain/lava.png")
+var earthquake_tex = load("res://graphics/terrain/earthquake.png")
+var tornado_tex = load("res://graphics/terrain/tornado.png")
+
+# unit data
 var unit_data = {
 	doomsday_surfer = {
 		name = "DoomsdaySurfer",
