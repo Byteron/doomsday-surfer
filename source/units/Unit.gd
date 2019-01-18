@@ -1,5 +1,7 @@
 extends Sprite
 
+signal power_cell_collected()
+
 var location = null
 
 func initialize(data, loc):
@@ -14,3 +16,11 @@ func move_to(loc):
 	self.location = loc
 	self.position = location.position
 	location.unit = self
+	power_collector(loc)
+
+func power_collector(loc):
+	if name == "PowerCollector":
+		if loc.power_cell:
+			loc.power_cell.queue_free()
+			loc.power_cell = null
+			emit_signal("power_cell_collected")
