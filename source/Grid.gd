@@ -30,6 +30,7 @@ func setup_locations():
 				cell = Vector2(x, y),
 				position = map_to_world_centered(Vector2(x, y)),
 				unit = null,
+				enemy = null,
 				disaster = null,
 				power_cell = null
 			}
@@ -113,6 +114,12 @@ func get_free_locations():
 			free_locations.append(loc)
 	return free_locations
 
+func get_free_locations_enemy():
+	var free_locations = []
+	for loc in locations.values():
+		if not loc.disaster and not loc.cell in border_cells:
+			free_locations.append(loc)
+	return free_locations
 func increase_quadrant_level(quadrant_index):
 	quadrants[quadrant_index].level += 1
 

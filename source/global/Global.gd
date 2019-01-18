@@ -16,6 +16,8 @@ var KaijuPlant = load("res://source/units/KaijuPlant.tscn")
 var PowerCollector = load("res://source/units/PowerCollector.tscn")
 var Survivors = load("res://source/units/Survivors.tscn")
 
+var EnemyKaiju = load("res://source/units/EnemyKaiju.tscn")
+
 var Disaster = load("res://source/Disaster.tscn")
 var PowerCell = load("res://source/items/PowerCell.tscn")
 

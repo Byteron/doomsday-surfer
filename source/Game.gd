@@ -69,6 +69,7 @@ func _on_DoomsdaySurfer_pressed(data):
 
 func _on_KaijuPlant_pressed(data):
 	var unit = Global.KaijuPlant.instance()
+	unit.connect("killed_enemy_kaiju", self, "_on_enemy_kaiju_killed")
 	unit.initialize(grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
 	$Interface/BorderRight/KaijuPlant.hide()
@@ -85,6 +86,11 @@ func _on_Survivors_pressed(data):
 	unit.initialize(grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
 	$Interface/BorderRight/Survivors.hide()
+
+func _on_enemy_kaiju_killed(loc):
+	loc.enemy.queue_free()
+	loc.enemy = null
+	enemy_kaiju = null
 
 func _on_surfer_moved(quadrant):
 	if stopped_timer:
@@ -155,7 +161,21 @@ func _on_PowerCell_timeout():
 	power_cells.add_child(power_cell)
 
 func _on_EnemyKaijuTimer_timeout():
-	pass # replace with function body
+	var free_locations = grid.get_free_locations_enemy()
+	if free_locations.size() == 0:
+		return
+	randomize()
+	var loc = free_locations[randi() % free_locations.size()]
+	if enemy_kaiju:
+		enemy_kaiju.move_to(loc)
+	else:
+		enemy_kaiju = Global.EnemyKaiju.instance()
+		enemy_kaiju.connect("killed_unit", self, "_on_enemy_kaiju_killed_unit")
+		enemy_kaiju.initialize(loc)
+		add_child(enemy_kaiju)
+
+func _on_enemy_kaiju_killed_unit(loc):
+	_kill_unit(loc)
 
 func _on_energy_bar_charged():
 	var quadrant = grid.get_quadrant_with_highest_danger_level()
@@ -170,14 +190,13 @@ func _get_quadrant_timer(quadrant):
 
 func _kill_unit(loc):
 	if loc.unit:
-		if loc.unit.name == "EnemyKaiju":
-			return
+		if loc.unit.name == "DoomsdaySurfer" and stopped_timer:
+			stopped_timer.start()
 		if loc.unit.name == "Survivors":
 			_game_over()
 		loc.unit.queue_free()
 		loc.unit = null
 		set_active_unit(null)
-		
 
 func _check_game_over():
 	if _all_quadrants_destroyed():
