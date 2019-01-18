@@ -6,16 +6,16 @@ var active_unit = null
 
 onready var grid = $Grid
 onready var units = $Units
+onready var power_cells = $PowerCells
 
-onready var q1 = $Q1
-onready var q2 = $Q2
-onready var q3 = $Q3
-onready var q4 = $Q4
+onready var quadrants = [ $Q1, $Q2, $Q3, $Q4 ]
 
 onready var tsunami_timer = $Timers/Tsunami
 onready var lava_timer = $Timers/Lava
 onready var earthquake_timer = $Timers/Earthquake
 onready var tornado_timer = $Timers/Tornado
+
+onready var power_cell_timer = $Timers/PowerCell
 
 onready var interface = $Interface
 
@@ -36,15 +36,16 @@ func _unhandled_input(event):
 		set_active_unit(null)
 
 func _ready():
-	$Interface/Quadrant1/DangerLevelBar.level = 1
-	$Interface/Quadrant2/DangerLevelBar.level = 2
-	$Interface/Quadrant3/DangerLevelBar.level = 3
-	$Interface/Quadrant4/DangerLevelBar.level = 4
-	
+#	$Interface/Quadrant1/DangerLevelBar.level = 1
+#	$Interface/Quadrant2/DangerLevelBar.level = 2
+#	$Interface/Quadrant3/DangerLevelBar.level = 3
+#	$Interface/Quadrant4/DangerLevelBar.level = 4
+#
 	$Interface/BorderRight/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
 	$Interface/BorderRight/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
 	$Interface/BorderRight/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
 	$Interface/BorderRight/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
+	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 
 func _process(delta):
 	interface.update_tsunami_time(tsunami_timer.time_left)
@@ -60,6 +61,7 @@ func _on_DoomsdaySurfer_pressed(data):
 	unit.initialize(data, grid.get_location_at(Vector2(1, 0)))
 	units.add_child(unit)
 	$Interface/BorderRight/DoomsdaySurfer.hide()
+
 func _on_KaijuPlant_pressed(data):
 	var unit = Global.Unit.instance()
 	unit.initialize(data, grid.get_location_at(Vector2(3, 0)))
@@ -68,6 +70,7 @@ func _on_KaijuPlant_pressed(data):
 
 func _on_PowerCollector_pressed(data):
 	var unit = Global.Unit.instance()
+	unit.connect("power_cell_collected", self, "_on_power_cell_collected")
 	unit.initialize(data, grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
 	$Interface/BorderRight/PowerCollector.hide()
@@ -78,6 +81,9 @@ func _on_Survivors_pressed(data):
 	units.add_child(unit)
 	$Interface/BorderRight/Survivors.hide()
 
+func _on_power_cell_collected():
+	interface.increase_power_level()
+
 func _on_Tsunami_timeout():
 	if grid.get_quadrant_level(TSUNAMI) < 4:
 		grid.increase_quadrant_level(TSUNAMI)
@@ -86,10 +92,9 @@ func _on_Tsunami_timeout():
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.tsunami_tex, loc.position)
 		loc.disaster = disaster
-		q1.add_child(disaster)
+		quadrants[TSUNAMI].add_child(disaster)
 		_kill_unit(loc)
 	_check_game_over()
-
 
 func _on_Lava_timeout():
 	if grid.get_quadrant_level(LAVA) < 4:
@@ -99,7 +104,7 @@ func _on_Lava_timeout():
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.lava_tex, loc.position)
 		loc.disaster = disaster
-		q2.add_child(disaster)
+		quadrants[LAVA].add_child(disaster)
 		_kill_unit(loc)
 	_check_game_over()
 
@@ -111,10 +116,9 @@ func _on_Earthquake_timeout():
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.earthquake_tex, loc.position)
 		loc.disaster = disaster
-		q3.add_child(disaster)
+		quadrants[EARTHQUAKE].add_child(disaster)
 		_kill_unit(loc)
 	_check_game_over()
-
 
 func _on_Tornado_timeout():
 	if grid.get_quadrant_level(TORNADO)  < 4:
@@ -124,9 +128,26 @@ func _on_Tornado_timeout():
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.tornado_tex, loc.position)
 		loc.disaster = disaster
-		q4.add_child(disaster)
+		quadrants[TORNADO].add_child(disaster)
 		_kill_unit(loc)
 	_check_game_over()
+
+func _on_PowerCell_timeout():
+	var free_locations = grid.get_free_locations()
+	randomize()
+	var loc = free_locations[randi() % free_locations.size()]
+	var power_cell = Global.PowerCell.instance()
+	power_cell.position = loc.position
+	loc.power_cell = power_cell
+	power_cells.add_child(power_cell)
+
+func _on_energy_bar_charged():
+	var quadrant = grid.get_quadrant_with_highest_danger_level()
+	for loc in quadrant.locations:
+		if loc.disaster:
+			loc.disaster.queue_free()
+			loc.disaster = null
+	quadrant.level = 0
 
 func _kill_unit(loc):
 	if loc.unit:

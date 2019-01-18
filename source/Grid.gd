@@ -7,6 +7,17 @@ const OFFSET = Vector2(64, 64)
 var quadrants = {}
 var locations = {}
 
+var border_cells = [
+	Vector2(0, 0), 
+	Vector2(0, 1), 
+	Vector2(0, 2), 
+	Vector2(0, 3), 
+	Vector2(5, 0), 
+	Vector2(5, 1), 
+	Vector2(5, 2), 
+	Vector2(5, 3), 
+]
+
 func _ready():
 	setup_locations()
 	setup_quadrants()
@@ -87,6 +98,20 @@ func get_quadrant_location(quadrant_index, location_index):
 
 func get_quadrant_level(quadrant_index):
 	return quadrants[quadrant_index].level
+
+func get_quadrant_with_highest_danger_level():
+	var danger_quadrant = quadrants[0]
+	for quadrant in quadrants:
+		if quadrant.level > danger_quadrant.level:
+			danger_quadrant = quadrant
+	return danger_quadrant
+
+func get_free_locations():
+	var free_locations = []
+	for loc in locations.values():
+		if not loc.unit and not loc.disaster and not loc.power_cell and not loc.cell in border_cells:
+			free_locations.append(loc)
+	return free_locations
 
 func increase_quadrant_level(quadrant_index):
 	quadrants[quadrant_index].level += 1

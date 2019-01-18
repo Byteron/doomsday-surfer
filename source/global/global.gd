@@ -7,6 +7,7 @@ var Game = "res://source/Game.tscn"
 # classes
 var Unit = load("res://source/units/Unit.tscn")
 var Disaster = load("res://source/Disaster.tscn")
+var PowerCell = load("res://source/items/PowerCell.tscn")
 
 # textures
 var tsunami_tex = load("res://graphics/terrain/tsunami.png")
