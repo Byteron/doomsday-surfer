@@ -14,7 +14,7 @@
 [ext_resource path="res://graphics/terrain/earthquake.png" type="Texture" id=12]
 [ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=13]
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -43,28 +43,28 @@ bus = "Master"
 [node name="Tsunami" type="Timer" parent="Timers" index="0"]
 
 process_mode = 1
-wait_time = 12.0
+wait_time = 11.0
 one_shot = false
 autostart = true
 
 [node name="Lava" type="Timer" parent="Timers" index="1"]
 
 process_mode = 1
-wait_time = 14.0
+wait_time = 15.0
 one_shot = false
 autostart = true
 
 [node name="Earthquake" type="Timer" parent="Timers" index="2"]
 
 process_mode = 1
-wait_time = 13.0
+wait_time = 16.0
 one_shot = false
 autostart = true
 
 [node name="Tornado" type="Timer" parent="Timers" index="3"]
 
 process_mode = 1
-wait_time = 15.0
+wait_time = 13.0
 one_shot = false
 autostart = true
 
@@ -78,7 +78,7 @@ autostart = true
 [node name="Food" type="Timer" parent="Timers" index="5"]
 
 process_mode = 1
-wait_time = 4.0
+wait_time = 6.0
 one_shot = false
 autostart = true
 

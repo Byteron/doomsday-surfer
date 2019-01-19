@@ -5,7 +5,7 @@
 [ext_resource path="res://graphics/interface/fill_bar_texture.png" type="Texture" id=3]
 [ext_resource path="res://source/interface/gui/HungerBar.gd" type="Script" id=4]
 
-[node name="HungerBar" type="TextureProgress"]
+[node name="HungerBar" type="TextureProgress" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -41,7 +41,7 @@ _sections_unfolded = [ "Rect", "Textures" ]
 [node name="Timer" type="Timer" parent="." index="0"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 3.0
 one_shot = false
 autostart = true
 
