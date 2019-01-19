@@ -40,8 +40,6 @@ bus = "Master"
 
 [node name="Timers" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Tsunami" type="Timer" parent="Timers" index="0"]
 
 process_mode = 1
@@ -56,17 +54,17 @@ wait_time = 10.0
 one_shot = false
 autostart = true
 
-[node name="Tornado" type="Timer" parent="Timers" index="2"]
-
-process_mode = 1
-wait_time = 9.0
-one_shot = false
-autostart = true
-
-[node name="Earthquake" type="Timer" parent="Timers" index="3"]
+[node name="Earthquake" type="Timer" parent="Timers" index="2"]
 
 process_mode = 1
 wait_time = 10.0
+one_shot = false
+autostart = true
+
+[node name="Tornado" type="Timer" parent="Timers" index="3"]
+
+process_mode = 1
+wait_time = 9.0
 one_shot = false
 autostart = true
 
@@ -121,32 +119,36 @@ _sections_unfolded = [ "Transform" ]
 
 script = ExtResource( 8 )
 
-[node name="TsunamiMarker" parent="Q1" index="0" instance=ExtResource( 9 )]
+[node name="Marker" parent="Q1" index="0" instance=ExtResource( 9 )]
 
+position = Vector2( 320, 192 )
 texture = ExtResource( 10 )
 
 [node name="Q2" type="Node2D" parent="." index="8"]
 
 script = ExtResource( 8 )
 
-[node name="LavaMarker" parent="Q2" index="0" instance=ExtResource( 9 )]
+[node name="Marker" parent="Q2" index="0" instance=ExtResource( 9 )]
 
+position = Vector2( 576, 192 )
 texture = ExtResource( 11 )
 
 [node name="Q3" type="Node2D" parent="." index="9"]
 
 script = ExtResource( 8 )
 
-[node name="EarthquakeMarker" parent="Q3" index="0" instance=ExtResource( 9 )]
+[node name="Marker" parent="Q3" index="0" instance=ExtResource( 9 )]
 
+position = Vector2( 576, 448 )
 texture = ExtResource( 12 )
 
 [node name="Q4" type="Node2D" parent="." index="10"]
 
 script = ExtResource( 8 )
 
-[node name="TornadoMarker" parent="Q4" index="0" instance=ExtResource( 9 )]
+[node name="Marker" parent="Q4" index="0" instance=ExtResource( 9 )]
 
+position = Vector2( 320, 448 )
 texture = ExtResource( 13 )
 
 [connection signal="timeout" from="Interface/BorderRight/ProgressBar/BreakPoint" to="." method="_on_BreakPoint_timeout"]
@@ -155,9 +157,9 @@ texture = ExtResource( 13 )
 
 [connection signal="timeout" from="Timers/Lava" to="." method="_on_Lava_timeout"]
 
-[connection signal="timeout" from="Timers/Tornado" to="." method="_on_Tornado_timeout"]
-
 [connection signal="timeout" from="Timers/Earthquake" to="." method="_on_Earthquake_timeout"]
+
+[connection signal="timeout" from="Timers/Tornado" to="." method="_on_Tornado_timeout"]
 
 [connection signal="timeout" from="Timers/PowerCell" to="." method="_on_PowerCell_timeout"]
 

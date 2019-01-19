@@ -1,6 +1,6 @@
 extends Node2D
 
-enum QUADRANT { TSUNAMI = 0, LAVA = 1, TORNADO = 2, EARTHQUAKE = 3}
+enum QUADRANT { TSUNAMI = 0, LAVA = 1, EARTHQUAKE = 2, TORNADO = 3}
 
 var active_unit = null
 var stopped_timer = null
@@ -8,10 +8,10 @@ var stopped_timer = null
 var enemy_kaiju = null
 var enemy_kaiju_marker = null
 
-onready var tsunami_marker = $Q1/TsunamiMarker
-onready var lava_marker = $Q2/LavaMarker
-onready var earthquake_marker = $Q3/EarthquakeMarker
-onready var tornado_marker = $Q4/TornadoMarker
+onready var tsunami_marker = $Q1/Marker
+onready var lava_marker = $Q2/Marker
+onready var earthquake_marker = $Q3/Marker
+onready var tornado_marker = $Q4/Marker
 
 onready var grid = $Grid
 onready var units = $Units
@@ -60,7 +60,7 @@ func DoomsdaySurfer(data):
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
 	unit.connect("timeout", self, "_on_surfer_timeout")
 	var loc = grid.get_location_at(Vector2(1, 0))
-	_on_surfer_moved(loc.quadrant)
+	_on_surfer_moved(null, loc.quadrant)
 	unit.initialize(loc)
 	units.add_child(unit)
 
@@ -97,11 +97,14 @@ func _on_enemy_kaiju_killed(loc):
 	enemy_kaiju_marker.queue_free()
 	enemy_kaiju_marker = null
 
-func _on_surfer_moved(quadrant):
+func _on_surfer_moved(last_quadrant, current_quadrant):
 	if stopped_timer:
 		stopped_timer.start()
-	stopped_timer = _get_quadrant_timer(quadrant)
+	stopped_timer = _get_quadrant_timer(current_quadrant)
 	stopped_timer.stop()
+	if last_quadrant:
+		quadrants[last_quadrant].start_marker()
+	quadrants[current_quadrant].stop_marker()
 
 func _on_surfer_timeout():
 	if stopped_timer:
@@ -200,12 +203,13 @@ func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
 
 func _on_energy_bar_charged():
-	var quadrant = grid.get_quadrant_with_highest_danger_level()
-	for loc in quadrant.locations:
+	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
+	quadrants[quadrant_dict.id].update_marker_position(quadrant_dict.locations[0].position)
+	for loc in quadrant_dict.locations:
 		if loc.disaster:
 			loc.disaster.queue_free()
 			loc.disaster = null
-	quadrant.level = 0
+	quadrant_dict.level = 0
 
 func place_kaiju_enemy_marker():
 	var free_locations = grid.get_free_locations_enemy()

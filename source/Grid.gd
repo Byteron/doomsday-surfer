@@ -38,6 +38,7 @@ func setup_locations():
 func setup_quadrants():
 	quadrants = [
 		{
+			id = 0,
 			name = "Tsunami Quadrant",
 			level = 0, 
 			locations = [
@@ -48,6 +49,7 @@ func setup_quadrants():
 			]
 		},
 		{
+			id = 1,
 			name = "Lava Quadrant",
 			level = 0,
 			locations = [
@@ -58,23 +60,25 @@ func setup_quadrants():
 			]
 		},
 		{
+			id = 2,
 			name = "Earthquake Quadrant",
-			level = 0,
-			locations = [
-				get_location_at(Vector2(2, 3)),
-				get_location_at(Vector2(1, 3)),
-				get_location_at(Vector2(2, 2)),
-				get_location_at(Vector2(1, 2))
-			]
-		},
-		{
-			name = "Tornado Quadrant",
 			level = 0,
 			locations = [
 				get_location_at(Vector2(4, 3)),
 				get_location_at(Vector2(3, 3)),
 				get_location_at(Vector2(4, 2)),
 				get_location_at(Vector2(3, 2))
+			]
+		},
+		{
+			id = 3,
+			name = "Tornado Quadrant",
+			level = 0,
+			locations = [
+				get_location_at(Vector2(2, 3)),
+				get_location_at(Vector2(1, 3)),
+				get_location_at(Vector2(2, 2)),
+				get_location_at(Vector2(1, 2))
 			]
 		}
 	]
@@ -83,6 +87,7 @@ func setup_quadrants():
 	for quadrant in quadrants:
 		for loc in quadrant.locations:
 			loc.quadrant = i
+		print(quadrant.name , " ", i)
 		i += 1
 
 func map_to_world_centered(cell):
