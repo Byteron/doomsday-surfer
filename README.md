@@ -1,6 +1,6 @@
-# doomsday-surfer
+# Doomsday Surfer
 
-# Godot Version
+## Godot Version
 
 - Godot 3.0.6 stable
 
