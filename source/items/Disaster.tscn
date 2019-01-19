@@ -3,8 +3,7 @@
 [ext_resource path="res://graphics/terrain/tsunami.png" type="Texture" id=1]
 [ext_resource path="res://source/items/Disaster.gd" type="Script" id=2]
 
-
-[node name="Disaster" type="Sprite"]
+[node name="Disaster" type="Sprite" index="0"]
 
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

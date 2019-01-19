@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level_3.png-a582d8fb99bd59d09281f737611e75ef.stex"
+path="res://.import/surfer_inactive3.png-c61bf6f917717dc13344d640a6d9252d.stex"
 
 [deps]
 
-source_file="res://graphics/interface/level_3.png"
-dest_files=[ "res://.import/level_3.png-a582d8fb99bd59d09281f737611e75ef.stex" ]
+source_file="res://graphics/units/surfer/surfer_inactive3.png"
+dest_files=[ "res://.import/surfer_inactive3.png-c61bf6f917717dc13344d640a6d9252d.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
