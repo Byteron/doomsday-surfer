@@ -252,8 +252,8 @@ func _get_quadrant_timer(quadrant):
 
 func _kill_unit(loc):
 	if loc.unit:
-		if loc.unit.name == "DoomsdaySurfer" and stopped_timer:
-			stopped_timer.start()
+		if loc.unit.name == "DoomsdaySurfer":
+			_game_over()
 		if loc.unit.name == "Survivors":
 			_game_over()
 		loc.unit.queue_free()
