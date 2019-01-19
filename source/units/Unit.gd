@@ -2,6 +2,7 @@ extends AnimatedSprite
 
 signal killed_enemy_kaiju()
 signal power_cell_collected()
+signal food_collected()
 
 var location = null
 
@@ -14,6 +15,7 @@ func move_to(loc):
 	self.location = loc
 	self.position = location.position
 	location.unit = self
+	survivors(loc)
 	power_collector(loc)
 	kaiju_plant(loc)
 
@@ -22,6 +24,13 @@ func select():
 
 func unselect():
 	scale = Vector2(1, 1)
+
+func survivors(loc):
+	if name == "Survivors":
+		if loc.food:
+			loc.food.queue_free()
+			loc.food = null
+			emit_signal("food_collected")
 
 func power_collector(loc):
 	if name == "PowerCollector":

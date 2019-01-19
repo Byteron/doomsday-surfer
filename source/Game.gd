@@ -16,6 +16,7 @@ onready var tornado_marker = $Q4/Marker
 onready var grid = $Grid
 onready var units = $Units
 onready var power_cells = $PowerCells
+onready var food = $Food
 
 onready var quadrants = [ $Q1, $Q2, $Q3, $Q4 ]
 
@@ -25,7 +26,7 @@ onready var earthquake_timer = $Timers/Earthquake
 onready var tornado_timer = $Timers/Tornado
 
 onready var power_cell_timer = $Timers/PowerCell
-
+onready var food_timer = $Timers/Food
 onready var interface = $Interface
 
 func _unhandled_input(event):
@@ -47,6 +48,7 @@ func _ready():
 	PowerCollector(Global.unit_data.power_collector)
 	Survivors(Global.unit_data.survivors)
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
+	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
 
 func _process(delta):
@@ -78,6 +80,7 @@ func PowerCollector(data):
 
 func Survivors(data):
 	var unit = Global.Survivors.instance()
+	unit.connect("food_collected", self, "_on_food_collected")
 	unit.initialize(grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
 
@@ -113,6 +116,9 @@ func _on_surfer_timeout():
 
 func _on_power_cell_collected():
 	interface.increase_power_level()
+
+func _on_food_collected():
+	interface.decrease_hunger()
 
 func _on_Tsunami_timeout():
 	if grid.get_quadrant_level(TSUNAMI) < 4:
@@ -185,6 +191,17 @@ func _on_PowerCell_timeout():
 	loc.power_cell = power_cell
 	power_cells.add_child(power_cell)
 
+func _on_Food_timeout():
+	var free_locations = grid.get_free_locations()
+	if free_locations.size() == 0:
+		return
+	randomize()
+	var loc = free_locations[randi() % free_locations.size()]
+	var chicken = Global.Food.instance()
+	chicken.position = loc.position
+	loc.food = chicken
+	food.add_child(chicken)
+
 func _on_EnemyKaijuTimer_timeout():
 	if enemy_kaiju:
 		enemy_kaiju.move_to(enemy_kaiju_marker.location)
@@ -202,6 +219,8 @@ func _on_EnemyKaijuDeathTimer_timeout():
 func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
 
+func _on_survivors_starved():
+	_game_over()
 func _on_energy_bar_charged():
 	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
 	quadrants[quadrant_dict.id].update_marker_position(quadrant_dict.locations[0].position)

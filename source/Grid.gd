@@ -32,7 +32,8 @@ func setup_locations():
 				unit = null,
 				enemy = null,
 				disaster = null,
-				power_cell = null
+				power_cell = null,
+				food = null
 			}
 
 func setup_quadrants():

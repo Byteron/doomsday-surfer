@@ -43,28 +43,28 @@ bus = "Master"
 [node name="Tsunami" type="Timer" parent="Timers" index="0"]
 
 process_mode = 1
-wait_time = 8.0
+wait_time = 12.0
 one_shot = false
 autostart = true
 
 [node name="Lava" type="Timer" parent="Timers" index="1"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 14.0
 one_shot = false
 autostart = true
 
 [node name="Earthquake" type="Timer" parent="Timers" index="2"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 13.0
 one_shot = false
 autostart = true
 
 [node name="Tornado" type="Timer" parent="Timers" index="3"]
 
 process_mode = 1
-wait_time = 9.0
+wait_time = 15.0
 one_shot = false
 autostart = true
 
@@ -75,17 +75,24 @@ wait_time = 3.0
 one_shot = false
 autostart = true
 
-[node name="EnemyKaijuTimer" type="Timer" parent="Timers" index="5"]
+[node name="Food" type="Timer" parent="Timers" index="5"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 4.0
 one_shot = false
 autostart = true
 
-[node name="EnemyKaijuDeathTimer" type="Timer" parent="Timers" index="6"]
+[node name="EnemyKaijuTimer" type="Timer" parent="Timers" index="6"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 8.0
+one_shot = false
+autostart = true
+
+[node name="EnemyKaijuDeathTimer" type="Timer" parent="Timers" index="7"]
+
+process_mode = 1
+wait_time = 12.0
 one_shot = true
 autostart = false
 
@@ -113,9 +120,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PowerCells" type="Node2D" parent="." index="5"]
 
-[node name="Units" type="Node2D" parent="." index="6"]
+[node name="Food" type="Node2D" parent="." index="6"]
 
-[node name="Q1" type="Node2D" parent="." index="7"]
+[node name="Units" type="Node2D" parent="." index="7"]
+
+[node name="Q1" type="Node2D" parent="." index="8"]
 
 script = ExtResource( 8 )
 
@@ -124,7 +133,7 @@ script = ExtResource( 8 )
 position = Vector2( 320, 192 )
 texture = ExtResource( 10 )
 
-[node name="Q2" type="Node2D" parent="." index="8"]
+[node name="Q2" type="Node2D" parent="." index="9"]
 
 script = ExtResource( 8 )
 
@@ -133,7 +142,7 @@ script = ExtResource( 8 )
 position = Vector2( 576, 192 )
 texture = ExtResource( 11 )
 
-[node name="Q3" type="Node2D" parent="." index="9"]
+[node name="Q3" type="Node2D" parent="." index="10"]
 
 script = ExtResource( 8 )
 
@@ -142,7 +151,7 @@ script = ExtResource( 8 )
 position = Vector2( 576, 448 )
 texture = ExtResource( 12 )
 
-[node name="Q4" type="Node2D" parent="." index="10"]
+[node name="Q4" type="Node2D" parent="." index="11"]
 
 script = ExtResource( 8 )
 
@@ -162,6 +171,8 @@ texture = ExtResource( 13 )
 [connection signal="timeout" from="Timers/Tornado" to="." method="_on_Tornado_timeout"]
 
 [connection signal="timeout" from="Timers/PowerCell" to="." method="_on_PowerCell_timeout"]
+
+[connection signal="timeout" from="Timers/Food" to="." method="_on_Food_timeout"]
 
 [connection signal="timeout" from="Timers/EnemyKaijuTimer" to="." method="_on_EnemyKaijuTimer_timeout"]
 

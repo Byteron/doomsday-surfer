@@ -22,6 +22,7 @@ var EnemyKaiju = load("res://source/units/EnemyKaiju.tscn")
 
 var Disaster = load("res://source/items/Disaster.tscn")
 var PowerCell = load("res://source/items/PowerCell.tscn")
+var Food = load("res://source/items/Food.tscn")
 
 # textures
 var tsunami_tex = load("res://graphics/terrain/tsunami.png")
