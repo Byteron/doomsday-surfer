@@ -1,7 +1,7 @@
 extends Node
 
 # variables
-var game_time = 10 # in seconds
+var game_time = 60 # in seconds
 
 # scenes
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"

@@ -44,7 +44,6 @@ func _unhandled_input(event):
 		elif not active_unit: 
 			var unit = grid.get_unit_at(mouse_cell)
 			set_active_unit(unit)
-		print(mouse_location)
 
 func _ready():
 	DoomsdaySurfer(Global.unit_data.doomsday_surfer)

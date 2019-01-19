@@ -7,7 +7,6 @@ func _ready():
 	_fade_in()
 
 func change_scene(scene):
-	print(scene)
 	next_scene = scene
 	_fade_out()
 
@@ -19,6 +18,5 @@ func _fade_out():
 
 func _on_animation_finished(anim):
 	if anim == "FadeOut":
-		print(next_scene)
 		_fade_in()
 		get_tree().change_scene(next_scene)

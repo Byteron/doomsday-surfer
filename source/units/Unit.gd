@@ -20,6 +20,7 @@ func move_to(loc):
 	kaiju_plant(loc)
 
 func select():
+	$AudioStreamPlayer.play()
 	scale = Vector2(1.3, 1.3)
 
 func unselect():

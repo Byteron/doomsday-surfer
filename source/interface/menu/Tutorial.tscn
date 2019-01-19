@@ -46,12 +46,13 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "
-CONTROLS: (Just the left click)
+text = "CONTROLS: (Just the left click)
+
 You are in control of 4 units, to select a unit click over it, once selected click where you want to move it.
 
 GOAL:
-Each unit has a goal to accomplish and some skill but the ultimate goal of the game is survive until the surfer catches the wave break point (red percentage bar in the top right). The surfer and the survivors must stay alive!
+
+Each unit has a goal to accomplish and some skill but the ultimate goal of the game is survive until the surfer catches the wave break point (red percentage bar in the top right).
 
 UNITS:
 

@@ -9,5 +9,4 @@ func set_time(time):
 	timer.start()
 
 func _process(delta):
-	print(timer.time_left, "/", timer.wait_time)
 	value = timer.wait_time - timer.time_left

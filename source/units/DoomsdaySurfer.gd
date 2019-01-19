@@ -16,7 +16,6 @@ func surfer(loc):
 		$QuadrantFreezeTimer.start()
 		play("surfing")
 		offset = Vector2(16, 16)
-		print("last ", last, "new ", last_quadrant)
 		emit_signal("surfer_moved", last, loc.quadrant)
 
 func _on_QuadrantFreezeTimer_timeout():

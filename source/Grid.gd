@@ -88,7 +88,6 @@ func setup_quadrants():
 	for quadrant in quadrants:
 		for loc in quadrant.locations:
 			loc.quadrant = i
-		print(quadrant.name , " ", i)
 		i += 1
 
 func map_to_world_centered(cell):
@@ -106,7 +105,6 @@ func get_quadrant_location(quadrant_index, location_index):
 	return null
 
 func get_quadrant_level(quadrant_index):
-	print("Quadrant: ", quadrant_index, " Level: ", quadrants[quadrant_index].level)
 	return quadrants[quadrant_index].level
 
 func get_quadrant_with_highest_danger_level():

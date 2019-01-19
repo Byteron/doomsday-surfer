@@ -14,7 +14,7 @@
 ## Units
 - ### Doomsday Surfer
 
-    - *stops* the **disaster growth** of the **quadrant** the **Doomsday Surfer** was placed in for 10 seconds
+    - *stops* the **disaster growth** of the **quadrant** the **Doomsday Surfer** was placed in for 10 seconds. He *must not* die!
 
 - ### Kaiju Plant
 
