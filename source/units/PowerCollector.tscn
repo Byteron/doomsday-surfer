@@ -19,6 +19,7 @@ animations = [ {
 
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 3
 playing = true
 
 
