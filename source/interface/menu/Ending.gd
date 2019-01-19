@@ -5,6 +5,7 @@ func _on_exit_pressed():
 
 
 func _on_replay_pressed():
+	Global.game_time += 30
 	Transition.change_scene(Global.Game)
 
 
