@@ -68,6 +68,7 @@ func set_active_unit(unit):
 func _on_DoomsdaySurfer_pressed(data):
 	var unit = Global.DoomsdaySurfer.instance()
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
+	unit.connect("timeout", self, "_on_surfer_timeout")
 	var loc = grid.get_location_at(Vector2(1, 0))
 	_on_surfer_moved(loc.quadrant)
 	unit.initialize(loc)
@@ -108,7 +109,12 @@ func _on_surfer_moved(quadrant):
 		stopped_timer.start()
 	stopped_timer = _get_quadrant_timer(quadrant)
 	stopped_timer.stop()
-	
+
+func _on_surfer_timeout():
+	if stopped_timer:
+		stopped_timer.start()
+		stopped_timer = null
+
 func _on_power_cell_collected():
 	interface.increase_power_level()
 

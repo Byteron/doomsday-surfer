@@ -120,6 +120,14 @@ func get_free_locations_enemy():
 		if not loc.disaster and not loc.cell in border_cells:
 			free_locations.append(loc)
 	return free_locations
+
+func get_free_locations_quadrant(quadrant):
+	var free_locations =  []
+	for loc in quadrants[quadrant].locations:
+		if not loc.disaster:
+			free_locations.append(loc)
+	return free_locations
+
 func increase_quadrant_level(quadrant_index):
 	quadrants[quadrant_index].level += 1
 

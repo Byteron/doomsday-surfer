@@ -2,22 +2,19 @@ extends AnimatedSprite
 
 signal killed_enemy_kaiju()
 signal power_cell_collected()
-signal surfer_moved(quadrant)
 
 var location = null
 
 func initialize(loc):
-	self.location = loc
-	position = location.position
-	location.unit = self
+	move_to(loc)
 
 func move_to(loc):
-	self.location.unit = null
+	if self.location:
+		self.location.unit = null
 	self.location = loc
 	self.position = location.position
 	location.unit = self
 	power_collector(loc)
-	surfer(loc)
 	kaiju_plant(loc)
 
 func power_collector(loc):
@@ -26,11 +23,6 @@ func power_collector(loc):
 			loc.power_cell.queue_free()
 			loc.power_cell = null
 			emit_signal("power_cell_collected")
-
-func surfer(loc):
-	if name == "DoomsdaySurfer":
-		emit_signal("surfer_moved", loc.quadrant)
-		print(loc.quadrant)
 
 func kaiju_plant(loc):
 	if name == "KaijuPlant":
