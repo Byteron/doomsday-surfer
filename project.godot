@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://source/global/Global.gd"
+Transition="*res://source/global/Transition.tscn"
 
 [display]
 

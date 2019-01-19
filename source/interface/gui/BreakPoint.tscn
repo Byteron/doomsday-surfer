@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/interface/gui/BreakPoint.gd" type="Script" id=1]
 
-[node name="BreakPoint" type="ProgressBar" index="0"]
+[node name="BreakPoint" type="ProgressBar"]
 
 modulate = Color( 0.921875, 0.55479, 0.0828247, 1 )
 self_modulate = Color( 0.898438, 0, 0, 1 )

@@ -3,7 +3,7 @@
 [ext_resource path="res://source/interface/menu/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://graphics/screen_texture.png" type="Texture" id=2]
 
-[node name="tutorial" type="Node2D" index="0"]
+[node name="tutorial" type="Node2D"]
 
 script = ExtResource( 1 )
 

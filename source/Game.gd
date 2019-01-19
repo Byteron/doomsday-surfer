@@ -271,7 +271,7 @@ func _all_quadrants_destroyed():
 	return true
 
 func _game_over():
-	get_tree().change_scene(Global.GameOver)
+	Transition.change_scene(Global.GameOver)
 
 func _on_BreakPoint_timeout():
-	get_tree().change_scene(Global.Ending)
+	Transition.change_scene(Global.Ending)

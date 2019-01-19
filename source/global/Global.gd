@@ -1,18 +1,18 @@
 extends Node
 
 # variables
-var game_time = 60 # in seconds
+var game_time = 10 # in seconds
 
 # scenes
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/Game.tscn"
-var Story = "res://source/StoryText.tscn"
+var Story = "res://source/interface/menu/StoryText.tscn"
 var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
 var GameOver = "res://source/interface/menu/GameOver.tscn"
 var Tutorial = "res://source/interface/menu/Tutorial.tscn"
 var EndingOld = "res://source/interface/menu/Ending.tscn"
-var Ending = "res://source/Ending.tscn"
+var Ending = "res://source/interface/menu/Ending.tscn"
 
 # classes
 var DoomsdaySurfer = load("res://source/units/DoomsdaySurfer.tscn")
