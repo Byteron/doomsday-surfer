@@ -119,7 +119,7 @@ func get_quadrant_with_highest_danger_level():
 func get_free_locations():
 	var free_locations = []
 	for loc in locations.values():
-		if not loc.unit and not loc.disaster and not loc.power_cell and not loc.cell in border_cells:
+		if not loc.unit and not loc.disaster and not loc.power_cell and not loc.food and not loc.cell in border_cells:
 			free_locations.append(loc)
 	return free_locations
 
