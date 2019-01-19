@@ -40,11 +40,10 @@ func _unhandled_input(event):
 		set_active_unit(null)
 
 func _ready():
-	_on_DoomsdaySurfer_pressed(Global.unit_data.doomsday_surfer)
-	_on_KaijuPlant_pressed(Global.unit_data.kaiju_plant)
-	_on_PowerCollector_pressed(Global.unit_data.power_collector)
-	_on_Survivors_pressed(Global.unit_data.survivors)
-	
+	DoomsdaySurfer(Global.unit_data.doomsday_surfer)
+	KaijuPlant(Global.unit_data.kaiju_plant)
+	PowerCollector(Global.unit_data.power_collector)
+	Survivors(Global.unit_data.survivors)
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	place_marker()
 
@@ -53,15 +52,8 @@ func _process(delta):
 	interface.update_lava_time(lava_timer.time_left)
 	interface.update_earthquake_time(earthquake_timer.time_left)
 	interface.update_tornado_time(tornado_timer.time_left)
-	
-func set_active_unit(unit):
-	if active_unit:
-		active_unit.unselect()
-	active_unit = unit
-	if active_unit:
-		active_unit.select()
 
-func _on_DoomsdaySurfer_pressed(data):
+func DoomsdaySurfer(data):
 	var unit = Global.DoomsdaySurfer.instance()
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
 	unit.connect("timeout", self, "_on_surfer_timeout")
@@ -70,22 +62,29 @@ func _on_DoomsdaySurfer_pressed(data):
 	unit.initialize(loc)
 	units.add_child(unit)
 
-func _on_KaijuPlant_pressed(data):
+func KaijuPlant(data):
 	var unit = Global.KaijuPlant.instance()
 	unit.connect("killed_enemy_kaiju", self, "_on_enemy_kaiju_killed")
 	unit.initialize(grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
 
-func _on_PowerCollector_pressed(data):
+func PowerCollector(data):
 	var unit = Global.PowerCollector.instance()
 	unit.connect("power_cell_collected", self, "_on_power_cell_collected")
 	unit.initialize(grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
 
-func _on_Survivors_pressed(data):
+func Survivors(data):
 	var unit = Global.Survivors.instance()
 	unit.initialize(grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
+
+func set_active_unit(unit):
+	if active_unit:
+		active_unit.unselect()
+	active_unit = unit
+	if active_unit:
+		active_unit.select()
 
 func _on_enemy_kaiju_killed(loc):
 	loc.enemy.queue_free()
