@@ -35,14 +35,11 @@ func _unhandled_input(event):
 		if active_unit:
 			if not mouse_location.unit and not mouse_location.disaster:
 				active_unit.move_to(mouse_location)
-				set_active_unit(null)
+			set_active_unit(null)
 		elif not active_unit: 
 			var unit = grid.get_unit_at(mouse_cell)
 			set_active_unit(unit)
 		print(mouse_location)
-	
-	if Input.is_action_just_pressed("click_right"):
-		set_active_unit(null)
 
 func _ready():
 	DoomsdaySurfer(Global.unit_data.doomsday_surfer)
