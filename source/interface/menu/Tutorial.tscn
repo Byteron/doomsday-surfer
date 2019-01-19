@@ -30,10 +30,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 206.0
-margin_top = 50.0
-margin_right = 547.0
-margin_bottom = 365.0
+margin_left = 41.0
+margin_top = 34.0
+margin_right = 748.0
+margin_bottom = 478.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -46,7 +46,27 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Click the units and then click on the tile you want to place them"
+text = "CONTROLS: (Just the left click)
+
+You are in control of 4 units, to select a unit click over it, once selected click where you want to move it.
+
+GOAL:
+
+Each unit has a goal to accomplish and some skill but the ultimate goal of the game is survive until the surfer catches the wave break point (red percentage bar in the top right).
+
+UNITS:
+
+Doomsday Surfer: Keep it in a quadrant to stop disasters from growing, but we aware after some time the surfer need to go to another quadrant. When the surfer stop a quadrant grow you can put a unit together with him if is a tile available to keep it secure for a while.
+
+Power Collector: This machine purpose is to collect energy cells, once the energy bar (in the left) is complete a random quadrant of the map will be cleaned of all disaster. This unit should be the one that moves more.
+
+Survivors: Poor guys just want to eat, collect food before the hunger bar on the right fills completely.
+
+Plant Kaiju aka \"Crimson Danger\": Move it over an enemy kaiju to kill it, an enemy kaiju will spawn and move randomly in the map, his next destination is marked with a red cross.
+
+We aware thar disasters are constantly growing buy you can stay in that tile until the disaster appears completly.
+
+Be fast. Think Fast, Click fast."
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -58,10 +78,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 263.0
-margin_top = 398.0
-margin_right = 481.0
-margin_bottom = 418.0
+margin_left = 258.0
+margin_top = 467.0
+margin_right = 476.0
+margin_bottom = 487.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -73,9 +93,37 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "I'm saving humankind this time!"
+text = "I'll save humankind!"
 flat = false
 align = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 314.0
+margin_top = 14.0
+margin_right = 421.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "HOW TO PLAY"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
