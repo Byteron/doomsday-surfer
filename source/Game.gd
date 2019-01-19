@@ -55,7 +55,11 @@ func _process(delta):
 	interface.update_tornado_time(tornado_timer.time_left)
 	
 func set_active_unit(unit):
+	if active_unit:
+		active_unit.unselect()
 	active_unit = unit
+	if active_unit:
+		active_unit.select()
 
 func _on_DoomsdaySurfer_pressed(data):
 	var unit = Global.DoomsdaySurfer.instance()
@@ -122,7 +126,6 @@ func _on_Lava_timeout():
 	if grid.get_quadrant_level(LAVA) < 4:
 		grid.increase_quadrant_level(LAVA)
 		var loc = grid.get_quadrant_location(LAVA, grid.get_quadrant_level(LAVA) - 1)
-		#grid.set_cellv(loc.cell, 2)
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.lava_tex, loc.position)
 		loc.disaster = disaster
@@ -134,7 +137,6 @@ func _on_Earthquake_timeout():
 	if grid.get_quadrant_level(EARTHQUAKE)  < 4:
 		grid.increase_quadrant_level(EARTHQUAKE)
 		var loc = grid.get_quadrant_location(EARTHQUAKE, grid.get_quadrant_level(EARTHQUAKE) - 1)
-		# grid.set_cellv(loc.cell, 6)
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.earthquake_tex, loc.position)
 		loc.disaster = disaster
@@ -146,7 +148,6 @@ func _on_Tornado_timeout():
 	if grid.get_quadrant_level(TORNADO)  < 4:
 		grid.increase_quadrant_level(TORNADO)
 		var loc = grid.get_quadrant_location(TORNADO, grid.get_quadrant_level(TORNADO) - 1)
-		# grid.set_cellv(loc.cell, 4)
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.tornado_tex, loc.position)
 		loc.disaster = disaster

@@ -17,6 +17,12 @@ func move_to(loc):
 	power_collector(loc)
 	kaiju_plant(loc)
 
+func select():
+	scale = Vector2(1.3, 1.3)
+
+func unselect():
+	scale = Vector2(1, 1)
+
 func power_collector(loc):
 	if name == "PowerCollector":
 		if loc.power_cell:
