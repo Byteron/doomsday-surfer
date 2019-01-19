@@ -29,7 +29,7 @@ onready var power_cell_timer = $Timers/PowerCell
 onready var interface = $Interface
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("click_left"):
+	if event.is_action_pressed("click_left"):
 		var mouse_cell = grid.world_to_map(get_local_mouse_position())
 		var mouse_location = grid.get_location_at(mouse_cell)
 		if active_unit:

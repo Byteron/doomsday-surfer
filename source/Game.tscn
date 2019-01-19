@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://source/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/Background.tscn" type="PackedScene" id=2]
@@ -9,8 +9,12 @@
 [ext_resource path="res://source/Grid.gd" type="Script" id=7]
 [ext_resource path="res://source/Quadrant.gd" type="Script" id=8]
 [ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=9]
+[ext_resource path="res://graphics/terrain/tsunami.png" type="Texture" id=10]
+[ext_resource path="res://graphics/terrain/lava.png" type="Texture" id=11]
+[ext_resource path="res://graphics/terrain/earthquake.png" type="Texture" id=12]
+[ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=13]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -119,11 +123,15 @@ script = ExtResource( 8 )
 
 [node name="TsunamiMarker" parent="Q1" index="0" instance=ExtResource( 9 )]
 
+texture = ExtResource( 10 )
+
 [node name="Q2" type="Node2D" parent="." index="8"]
 
 script = ExtResource( 8 )
 
 [node name="LavaMarker" parent="Q2" index="0" instance=ExtResource( 9 )]
+
+texture = ExtResource( 11 )
 
 [node name="Q3" type="Node2D" parent="." index="9"]
 
@@ -131,11 +139,15 @@ script = ExtResource( 8 )
 
 [node name="EarthquakeMarker" parent="Q3" index="0" instance=ExtResource( 9 )]
 
+texture = ExtResource( 12 )
+
 [node name="Q4" type="Node2D" parent="." index="10"]
 
 script = ExtResource( 8 )
 
 [node name="TornadoMarker" parent="Q4" index="0" instance=ExtResource( 9 )]
+
+texture = ExtResource( 13 )
 
 [connection signal="timeout" from="Interface/BorderRight/ProgressBar/BreakPoint" to="." method="_on_BreakPoint_timeout"]
 
