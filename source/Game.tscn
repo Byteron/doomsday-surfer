@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://source/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/Background.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://source/tilesets/TileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://source/Grid.gd" type="Script" id=7]
 [ext_resource path="res://source/Quadrant.gd" type="Script" id=8]
+[ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 
@@ -116,17 +117,25 @@ _sections_unfolded = [ "Transform" ]
 
 script = ExtResource( 8 )
 
+[node name="TsunamiMarker" parent="Q1" index="0" instance=ExtResource( 9 )]
+
 [node name="Q2" type="Node2D" parent="." index="8"]
 
 script = ExtResource( 8 )
+
+[node name="LavaMarker" parent="Q2" index="0" instance=ExtResource( 9 )]
 
 [node name="Q3" type="Node2D" parent="." index="9"]
 
 script = ExtResource( 8 )
 
+[node name="EarthquakeMarker" parent="Q3" index="0" instance=ExtResource( 9 )]
+
 [node name="Q4" type="Node2D" parent="." index="10"]
 
 script = ExtResource( 8 )
+
+[node name="TornadoMarker" parent="Q4" index="0" instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="Interface/BorderRight/ProgressBar/BreakPoint" to="." method="_on_BreakPoint_timeout"]
 

@@ -6,7 +6,12 @@ var active_unit = null
 var stopped_timer = null
 
 var enemy_kaiju = null
-var marker = null
+var enemy_kaiju_marker = null
+
+onready var tsunami_marker = $Q1/TsunamiMarker
+onready var lava_marker = $Q2/LavaMarker
+onready var earthquake_marker = $Q3/EarthquakeMarker
+onready var tornado_marker = $Q4/TornadoMarker
 
 onready var grid = $Grid
 onready var units = $Units
@@ -45,7 +50,7 @@ func _ready():
 	PowerCollector(Global.unit_data.power_collector)
 	Survivors(Global.unit_data.survivors)
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
-	place_marker()
+	place_kaiju_enemy_marker()
 
 func _process(delta):
 	interface.update_tsunami_time(tsunami_timer.time_left)
@@ -92,8 +97,8 @@ func _on_enemy_kaiju_killed(loc):
 	enemy_kaiju = null
 	$Timers/EnemyKaijuTimer.stop()
 	$Timers/EnemyKaijuDeathTimer.start()
-	marker.queue_free()
-	marker = null
+	enemy_kaiju_marker.queue_free()
+	enemy_kaiju_marker = null
 
 func _on_surfer_moved(quadrant):
 	if stopped_timer:
@@ -113,7 +118,10 @@ func _on_Tsunami_timeout():
 	if grid.get_quadrant_level(TSUNAMI) < 4:
 		grid.increase_quadrant_level(TSUNAMI)
 		var loc = grid.get_quadrant_location(TSUNAMI, grid.get_quadrant_level(TSUNAMI) - 1)
-		# grid.set_cellv(loc.cell, 0)
+		var next_loc = grid.get_quadrant_location(TSUNAMI, grid.get_quadrant_level(TSUNAMI))
+		if next_loc:
+			tsunami_marker.position = next_loc.position
+			tsunami_marker.animate()
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.tsunami_tex, loc.position)
 		loc.disaster = disaster
@@ -125,6 +133,10 @@ func _on_Lava_timeout():
 	if grid.get_quadrant_level(LAVA) < 4:
 		grid.increase_quadrant_level(LAVA)
 		var loc = grid.get_quadrant_location(LAVA, grid.get_quadrant_level(LAVA) - 1)
+		var next_loc = grid.get_quadrant_location(LAVA, grid.get_quadrant_level(LAVA))
+		if next_loc:
+			lava_marker.position = next_loc.position
+			lava_marker.animate()
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.lava_tex, loc.position)
 		loc.disaster = disaster
@@ -136,6 +148,10 @@ func _on_Earthquake_timeout():
 	if grid.get_quadrant_level(EARTHQUAKE)  < 4:
 		grid.increase_quadrant_level(EARTHQUAKE)
 		var loc = grid.get_quadrant_location(EARTHQUAKE, grid.get_quadrant_level(EARTHQUAKE) - 1)
+		var next_loc = grid.get_quadrant_location(EARTHQUAKE, grid.get_quadrant_level(EARTHQUAKE))
+		if next_loc:
+			earthquake_marker.position = next_loc.position
+			earthquake_marker.animate()
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.earthquake_tex, loc.position)
 		loc.disaster = disaster
@@ -147,6 +163,10 @@ func _on_Tornado_timeout():
 	if grid.get_quadrant_level(TORNADO)  < 4:
 		grid.increase_quadrant_level(TORNADO)
 		var loc = grid.get_quadrant_location(TORNADO, grid.get_quadrant_level(TORNADO) - 1)
+		var next_loc = grid.get_quadrant_location(TORNADO, grid.get_quadrant_level(TORNADO))
+		if next_loc:
+			tornado_marker.position = next_loc.position
+			tornado_marker.animate()
 		var disaster = Global.Disaster.instance()
 		disaster.initialize(Global.tornado_tex, loc.position)
 		loc.disaster = disaster
@@ -167,17 +187,17 @@ func _on_PowerCell_timeout():
 
 func _on_EnemyKaijuTimer_timeout():
 	if enemy_kaiju:
-		enemy_kaiju.move_to(marker.location)
+		enemy_kaiju.move_to(enemy_kaiju_marker.location)
 	else:
 		enemy_kaiju = Global.EnemyKaiju.instance()
 		enemy_kaiju.connect("killed_unit", self, "_on_enemy_kaiju_killed_unit")
-		enemy_kaiju.initialize(marker.location)
+		enemy_kaiju.initialize(enemy_kaiju_marker.location)
 		add_child(enemy_kaiju)
-	place_marker()
+	place_kaiju_enemy_marker()
 
 func _on_EnemyKaijuDeathTimer_timeout():
 	$Timers/EnemyKaijuTimer.start()
-	place_marker()
+	place_kaiju_enemy_marker()
 
 func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
@@ -190,24 +210,24 @@ func _on_energy_bar_charged():
 			loc.disaster = null
 	quadrant.level = 0
 
-func place_marker():
+func place_kaiju_enemy_marker():
 	var free_locations = grid.get_free_locations_enemy()
 	if free_locations.size() == 0:
 		return
 	var next_loc = free_locations[randi() % free_locations.size()]
-	if not marker:
+	if not enemy_kaiju_marker:
 		var loc = free_locations[randi() % free_locations.size()]
-		marker = Global.Marker.instance()
-		marker.position = loc.position
-		marker.location = loc
-		marker.next_location = next_loc
-		add_child(marker)
+		enemy_kaiju_marker = Global.Marker.instance()
+		enemy_kaiju_marker.position = loc.position
+		enemy_kaiju_marker.location = loc
+		enemy_kaiju_marker.next_location = next_loc
+		add_child(enemy_kaiju_marker)
 	else:
-		var loc = marker.next_location
-		marker.position = loc.position
-		marker.location = loc
-		marker.next_location = next_loc
-	marker.animate()
+		var loc = enemy_kaiju_marker.next_location
+		enemy_kaiju_marker.position = loc.position
+		enemy_kaiju_marker.location = loc
+		enemy_kaiju_marker.next_location = next_loc
+	enemy_kaiju_marker.animate()
 
 func _get_quadrant_timer(quadrant):
 	return $Timers.get_child(quadrant)

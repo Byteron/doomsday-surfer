@@ -17,10 +17,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Survivors" index="0" instance=ExtResource( 1 )]
+[node name="Survivors" instance=ExtResource( 1 )]
 
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 3
 playing = true
 
 

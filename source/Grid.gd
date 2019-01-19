@@ -95,9 +95,12 @@ func get_location_at(cell):
 	return locations[_flatten(cell)]
 
 func get_quadrant_location(quadrant_index, location_index):
-	return quadrants[quadrant_index].locations[location_index]
+	if quadrants[quadrant_index].locations.size() > location_index:
+		return quadrants[quadrant_index].locations[location_index]
+	return null
 
 func get_quadrant_level(quadrant_index):
+	print("Quadrant: ", quadrant_index, " Level: ", quadrants[quadrant_index].level)
 	return quadrants[quadrant_index].level
 
 func get_quadrant_with_highest_danger_level():
