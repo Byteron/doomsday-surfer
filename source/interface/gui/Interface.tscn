@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/interface/gui/Interface.gd" type="Script" id=1]
-[ext_resource path="res://source/ProgressBar.gd" type="Script" id=2]
+[ext_resource path="res://source/interface/gui/BreakPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interface/gui/HungerBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/interface/gui/EnergyBar.tscn" type="PackedScene" id=4]
 
@@ -31,65 +31,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0.627451 )
 
-[node name="ProgressBar" type="ProgressBar" parent="BorderRight" index="0"]
-
-modulate = Color( 0.921875, 0.55479, 0.0828247, 1 )
-self_modulate = Color( 0.898438, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 11.0
-margin_top = 32.0
-margin_right = 118.0
-margin_bottom = 68.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-custom_colors/font_color_shadow = Color( 0.917969, 0.808433, 0.0932312, 1 )
-min_value = 0.0
-max_value = 60.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-percent_visible = true
-script = ExtResource( 2 )
-_sections_unfolded = [ "Material", "Percent", "Visibility", "custom_colors" ]
-
-[node name="Label" type="Label" parent="BorderRight/ProgressBar" index="0"]
-
-modulate = Color( 0.972656, 0.72124, 0.0531921, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1.0
-margin_top = -19.0
-margin_right = 87.0
-margin_bottom = -5.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "BREAK POINT"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Visibility", "custom_styles" ]
-
-[node name="BreakPoint" type="Timer" parent="BorderRight/ProgressBar" index="1"]
-
-process_mode = 1
-wait_time = 60.0
-one_shot = true
-autostart = true
+[node name="BreakPoint" parent="BorderRight" index="0" instance=ExtResource( 2 )]
 
 [node name="BorderLeft" type="ColorRect" parent="." index="1"]
 

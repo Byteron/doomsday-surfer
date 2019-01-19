@@ -51,6 +51,7 @@ func _ready():
 	KaijuPlant(Global.unit_data.kaiju_plant)
 	PowerCollector(Global.unit_data.power_collector)
 	Survivors(Global.unit_data.survivors)
+	interface.set_breakpoint_time(Global.game_time)
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
