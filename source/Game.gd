@@ -51,12 +51,6 @@ func _ready():
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
 
-func _process(delta):
-	interface.update_tsunami_time(tsunami_timer.time_left)
-	interface.update_lava_time(lava_timer.time_left)
-	interface.update_earthquake_time(earthquake_timer.time_left)
-	interface.update_tornado_time(tornado_timer.time_left)
-
 func DoomsdaySurfer(data):
 	var unit = Global.DoomsdaySurfer.instance()
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
@@ -107,12 +101,11 @@ func _on_surfer_moved(last_quadrant, current_quadrant):
 	stopped_timer.stop()
 	if last_quadrant:
 		quadrants[last_quadrant].start_marker()
-	quadrants[current_quadrant].stop_marker()
+	quadrants[current_quadrant].reset_marker()
 
-func _on_surfer_timeout():
-	if stopped_timer:
-		stopped_timer.start()
-		stopped_timer = null
+func _on_surfer_timeout(quadrant):
+	stopped_timer.start()
+	quadrants[quadrant].start_marker()
 
 func _on_power_cell_collected():
 	interface.increase_power_level()

@@ -20,6 +20,6 @@ func surfer(loc):
 		emit_signal("surfer_moved", last, loc.quadrant)
 
 func _on_QuadrantFreezeTimer_timeout():
-	emit_signal("timeout")
+	emit_signal("timeout", location.quadrant)
 	play("idle")
 	offset = Vector2(25, -25)

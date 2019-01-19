@@ -40,9 +40,8 @@ func power_collector(loc):
 			emit_signal("power_cell_collected")
 
 func kaiju_plant(loc):
-	if name == "KaijuPlant":
-		if loc.enemy:
-			emit_signal("killed_enemy_kaiju", loc)
+	if name == "KaijuPlant" and loc.enemy:
+		emit_signal("killed_enemy_kaiju", loc)
 
 func _on_Flipback_timeout():
 	flip_h = !flip_h

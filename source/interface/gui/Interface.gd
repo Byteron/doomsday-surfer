@@ -17,20 +17,9 @@ func _ready():
 
 func decrease_hunger():
 	hunger_bar.decrease()
+
 func increase_power_level():
 	energy_bar.increase()
-	
-func update_tsunami_time(time):
-	tsunami_time.text = "Tsunami: " + str(time).pad_decimals(0)
-
-func update_lava_time(time):
-	lava_time.text = "Lava: " + str(time).pad_decimals(0)
-
-func update_earthquake_time(time):
-	earthquake_time.text = "Earthquake: " + str(time).pad_decimals(0)
-
-func update_tornado_time(time):
-	tornado_time.text = "Tornado: " + str(time).pad_decimals(0)
 
 func _on_EnergyBar_charged():
 	emit_signal("energy_bar_charged")
