@@ -1,19 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://source/units/Unit.tscn" type="PackedScene" id=1]
-[ext_resource path="res://graphics/units/kaiju_plant.png" type="Texture" id=2]
+[ext_resource path="res://graphics/units/crimson/kaiju_plan_idle1.png" type="Texture" id=2]
+[ext_resource path="res://graphics/units/crimson/kaiju_plan_idle2.png" type="Texture" id=3]
+[ext_resource path="res://graphics/units/crimson/kaiju_plan_idle3.png" type="Texture" id=4]
+[ext_resource path="res://graphics/units/crimson/kaiju_plan_idle4.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
 "speed": 5.0
 } ]
 
 [node name="KaijuPlant" instance=ExtResource( 1 )]
 
 frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="Flipback" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Flipback" to="." method="_on_Flipback_timeout"]
 
 
