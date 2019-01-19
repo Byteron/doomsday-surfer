@@ -9,7 +9,7 @@
 - both **natural disaster** and **one control**
 
 ## Control
-- with your mouse, move your units around to survive the doomsday!
+- with your left mouse button, move your units around to survive the doomsday!
 
 ## Units
 - ### Doomsday Surfer
