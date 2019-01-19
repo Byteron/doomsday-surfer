@@ -61,6 +61,13 @@ wait_time = 5.0
 one_shot = false
 autostart = true
 
+[node name="EnemyKaijuDeathTimer" type="Timer" parent="Timers" index="6"]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = true
+autostart = false
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 2 )
@@ -217,6 +224,8 @@ editor/display_folded = true
 [connection signal="timeout" from="Timers/PowerCell" to="." method="_on_PowerCell_timeout"]
 
 [connection signal="timeout" from="Timers/EnemyKaijuTimer" to="." method="_on_EnemyKaijuTimer_timeout"]
+
+[connection signal="timeout" from="Timers/EnemyKaijuDeathTimer" to="." method="_on_EnemyKaijuDeathTimer_timeout"]
 
 [connection signal="timeout" from="Interface/Node2D/ProgressBar/BreakPoint" to="." method="_on_BreakPoint_timeout"]
 

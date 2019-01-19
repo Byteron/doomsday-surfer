@@ -98,6 +98,10 @@ func _on_enemy_kaiju_killed(loc):
 	loc.enemy.queue_free()
 	loc.enemy = null
 	enemy_kaiju = null
+	$Timers/EnemyKaijuTimer.stop()
+	$Timers/EnemyKaijuDeathTimer.start()
+	marker.queue_free()
+	marker = null
 
 func _on_surfer_moved(quadrant):
 	if stopped_timer:
@@ -175,6 +179,10 @@ func _on_EnemyKaijuTimer_timeout():
 		enemy_kaiju.connect("killed_unit", self, "_on_enemy_kaiju_killed_unit")
 		enemy_kaiju.initialize(marker.location)
 		add_child(enemy_kaiju)
+	place_marker()
+
+func _on_EnemyKaijuDeathTimer_timeout():
+	$Timers/EnemyKaijuTimer.start()
 	place_marker()
 
 func _on_enemy_kaiju_killed_unit(loc):
