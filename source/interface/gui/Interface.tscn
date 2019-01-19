@@ -239,12 +239,4 @@ margin_right = 7.0
 margin_bottom = 255.0
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Node2D" type="CanvasLayer" parent="." index="3"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
 
