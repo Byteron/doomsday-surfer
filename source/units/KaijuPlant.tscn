@@ -19,6 +19,7 @@ animations = [ {
 
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Flipback" type="Timer" parent="." index="0"]

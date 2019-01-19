@@ -34,3 +34,6 @@ func kaiju_plant(loc):
 	if name == "KaijuPlant":
 		if loc.enemy:
 			emit_signal("killed_enemy_kaiju", loc)
+
+func _on_Flipback_timeout():
+	flip_h = !flip_h
