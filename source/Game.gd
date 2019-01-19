@@ -35,7 +35,11 @@ func _unhandled_input(event):
 		var mouse_location = grid.get_location_at(mouse_cell)
 		if active_unit:
 			if not mouse_location.unit and not mouse_location.disaster:
-				active_unit.move_to(mouse_location)
+				if mouse_location.enemy:
+					if active_unit.name == "KaijuPlant":
+						active_unit.move_to(mouse_location)
+				else:
+					active_unit.move_to(mouse_location)
 			set_active_unit(null)
 		elif not active_unit: 
 			var unit = grid.get_unit_at(mouse_cell)

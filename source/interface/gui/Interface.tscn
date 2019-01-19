@@ -5,7 +5,7 @@
 [ext_resource path="res://source/interface/gui/HungerBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/interface/gui/EnergyBar.tscn" type="PackedScene" id=4]
 
-[node name="Interface" type="CanvasLayer" index="0"]
+[node name="Interface" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
