@@ -47,14 +47,6 @@ func _ready():
 	
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	place_marker()
-#	$Interface/Quadrant1/DangerLevelBar.level = 1
-#	$Interface/Quadrant2/DangerLevelBar.level = 2
-#	$Interface/Quadrant3/DangerLevelBar.level = 3
-#	$Interface/Quadrant4/DangerLevelBar.level = 4
-#	$Interface/BorderRight/DoomsdaySurfer.connect("pressed", self, "_on_DoomsdaySurfer_pressed", [Global.unit_data.doomsday_surfer])
-#	$Interface/BorderRight/KaijuPlant.connect("pressed", self, "_on_KaijuPlant_pressed", [Global.unit_data.kaiju_plant])
-#	$Interface/BorderRight/PowerCollector.connect("pressed", self, "_on_PowerCollector_pressed", [Global.unit_data.power_collector])
-#	$Interface/BorderRight/Survivors.connect("pressed", self, "_on_Survivors_pressed", [Global.unit_data.survivors])
 
 func _process(delta):
 	interface.update_tsunami_time(tsunami_timer.time_left)
@@ -73,27 +65,23 @@ func _on_DoomsdaySurfer_pressed(data):
 	_on_surfer_moved(loc.quadrant)
 	unit.initialize(loc)
 	units.add_child(unit)
-	$Interface/BorderRight/DoomsdaySurfer.hide()
 
 func _on_KaijuPlant_pressed(data):
 	var unit = Global.KaijuPlant.instance()
 	unit.connect("killed_enemy_kaiju", self, "_on_enemy_kaiju_killed")
 	unit.initialize(grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
-	$Interface/BorderRight/KaijuPlant.hide()
 
 func _on_PowerCollector_pressed(data):
 	var unit = Global.PowerCollector.instance()
 	unit.connect("power_cell_collected", self, "_on_power_cell_collected")
 	unit.initialize(grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
-	$Interface/BorderRight/PowerCollector.hide()
 
 func _on_Survivors_pressed(data):
 	var unit = Global.Survivors.instance()
 	unit.initialize(grid.get_location_at(Vector2(3, 2)))
 	units.add_child(unit)
-	$Interface/BorderRight/Survivors.hide()
 
 func _on_enemy_kaiju_killed(loc):
 	loc.enemy.queue_free()
