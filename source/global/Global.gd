@@ -8,7 +8,8 @@ var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
 var GameOver = "res://source/interface/menu/GameOver.tscn"
 var Tutorial = "res://source/interface/menu/Tutorial.tscn"
-var Ending = "res://source/interface/menu/Ending.tscn"
+var EndingOld = "res://source/interface/menu/Ending.tscn"
+var Ending = "res://source/Ending.tscn"
 
 # classes
 var DoomsdaySurfer = load("res://source/units/DoomsdaySurfer.tscn")
