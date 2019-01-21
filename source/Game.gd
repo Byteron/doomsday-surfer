@@ -1,5 +1,8 @@
 extends Node2D
 
+signal game_over(cause)
+signal tile_changed(cell)
+
 enum QUADRANT { TSUNAMI = 0, LAVA = 1, EARTHQUAKE = 2, TORNADO = 3}
 
 var active_unit = null
@@ -28,8 +31,13 @@ onready var tornado_timer = $Timers/Tornado
 onready var power_cell_timer = $Timers/PowerCell
 onready var food_timer = $Timers/Food
 onready var interface = $Interface
+onready var cursor = $Cursor
 
 func _unhandled_input(event):
+	var mouse_position = grid.world_to_world(get_global_mouse_position())
+	if mouse_position != cursor.position:
+		emit_signal("tile_changed", mouse_position)
+	
 	if event.is_action_pressed("click_left"):
 		var mouse_cell = grid.world_to_map(get_local_mouse_position())
 		var mouse_location = grid.get_location_at(mouse_cell)
@@ -51,6 +59,8 @@ func _ready():
 	PowerCollector(Global.unit_data.power_collector)
 	Survivors(Global.unit_data.survivors)
 	interface.set_breakpoint_time(Global.game_time)
+	connect("game_over", self, "_on_game_over")
+	connect("tile_changed", self, "_on_tile_changed")
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
@@ -217,7 +227,8 @@ func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
 
 func _on_survivors_starved():
-	_game_over()
+	emit_signal("game_over", "Survivors starved")
+
 func _on_energy_bar_charged():
 	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
 	quadrants[quadrant_dict.id].update_marker_position(quadrant_dict.locations[0].position)
@@ -252,22 +263,29 @@ func _get_quadrant_timer(quadrant):
 func _kill_unit(loc):
 	if loc.unit:
 		if loc.unit.name == "DoomsdaySurfer":
-			_game_over()
+			emit_signal("game_over", "Doomsday Surfer died")
 		if loc.unit.name == "Survivors":
-			_game_over()
+			emit_signal("game_over", "Survivors died")
 		loc.unit.queue_free()
 		loc.unit = null
 		set_active_unit(null)
 
 func _check_game_over():
 	if _all_quadrants_destroyed():
-		_game_over()
+		emit_signal("game_over", "All Quadrants have been destroyed")
 
 func _all_quadrants_destroyed():
 	for quadrant in grid.quadrants:
 		if quadrant.level < 4:
 			return false
 	return true
+
+func _on_tile_changed(position):
+	cursor.position = position
+
+func _on_game_over(cause):
+	Global.defeat_reason = cause
+	_game_over()
 
 func _game_over():
 	Transition.change_scene(Global.GameOver)

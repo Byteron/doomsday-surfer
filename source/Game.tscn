@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://source/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/Background.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://graphics/terrain/lava.png" type="Texture" id=10]
 [ext_resource path="res://graphics/terrain/earthquake.png" type="Texture" id=11]
 [ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=12]
+[ext_resource path="res://graphics/interface/cursor.png" type="Texture" id=13]
 
 [node name="Game" type="Node2D"]
 
@@ -151,6 +152,12 @@ script = ExtResource( 7 )
 
 position = Vector2( 320, 448 )
 texture = ExtResource( 12 )
+
+[node name="Cursor" type="Sprite" parent="." index="12"]
+
+texture = ExtResource( 13 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [connection signal="timeout" from="Interface/BorderRight/BreakPoint/Timer" to="." method="_on_BreakPoint_timeout"]
 

@@ -93,6 +93,9 @@ func setup_quadrants():
 func map_to_world_centered(cell):
 	return map_to_world(cell) + OFFSET
 
+func world_to_world(position):
+	return map_to_world(world_to_map(position))
+
 func get_unit_at(cell):
 	return locations[_flatten(cell)].unit
 
