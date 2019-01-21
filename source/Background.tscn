@@ -2,7 +2,7 @@
 
 [ext_resource path="res://graphics/terrain/scenario_concept3.png" type="Texture" id=1]
 
-[node name="Background" type="CanvasLayer" index="0"]
+[node name="Background" type="CanvasLayer"]
 
 layer = -1
 offset = Vector2( 0, 0 )
