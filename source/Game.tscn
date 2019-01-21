@@ -14,7 +14,7 @@
 [ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=12]
 [ext_resource path="res://graphics/interface/cursor.png" type="Texture" id=13]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -107,7 +107,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 1, 1, 0, 2, 1, 0, 3, 3, 0, 4, 3, 0, 65537, 1, 0, 65538, 1, 0, 65539, 3, 0, 65540, 3, 0, 131073, 5, 0, 131074, 5, 0, 131075, 7, 0, 131076, 7, 0, 196609, 5, 0, 196610, 5, 0, 196611, 7, 0, 196612, 7, 0 )
+tile_data = PoolIntArray( 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 65537, 8, 0, 65538, 8, 0, 65539, 8, 0, 65540, 8, 0, 131073, 8, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 196609, 8, 0, 196610, 8, 0, 196611, 8, 0, 196612, 8, 0 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
