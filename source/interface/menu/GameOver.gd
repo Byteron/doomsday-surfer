@@ -5,6 +5,7 @@ onready var reason_label = $HBoxContainer/Reason
 func _ready():
 	if Global.defeat_reason:
 		reason_label.text = Global.defeat_reason
+
 func _on_Button_pressed():
 		Global.game_time = 60
 		Transition.change_scene(Global.Game)

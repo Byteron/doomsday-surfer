@@ -15,10 +15,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="EnemyKaiju" type="AnimatedSprite" index="0"]
+[node name="EnemyKaiju" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 3
 playing = true
 script = ExtResource( 5 )
 

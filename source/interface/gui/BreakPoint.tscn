@@ -34,6 +34,7 @@ _sections_unfolded = [ "Material", "Percent", "Visibility", "custom_colors" ]
 
 [node name="Label" type="Label" parent="." index="0"]
 
+visible = false
 modulate = Color( 0.972656, 0.72124, 0.0531921, 1 )
 anchor_left = 0.0
 anchor_top = 0.0

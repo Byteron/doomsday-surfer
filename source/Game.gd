@@ -240,6 +240,7 @@ func place_kaiju_enemy_marker():
 	if not enemy_kaiju_marker:
 		var loc = free_locations[randi() % free_locations.size()]
 		enemy_kaiju_marker = Global.Marker.instance()
+		enemy_kaiju_marker.fade_time = $Timers/EnemyKaijuTimer.wait_time
 		enemy_kaiju_marker.position = loc.position
 		enemy_kaiju_marker.location = loc
 		enemy_kaiju_marker.next_location = next_loc
