@@ -1,7 +1,6 @@
 extends Node2D
 
 signal game_over(cause)
-signal tile_changed(cell)
 
 enum QUADRANT { TSUNAMI = 0, LAVA = 1, EARTHQUAKE = 2, TORNADO = 3}
 
@@ -31,13 +30,9 @@ onready var tornado_timer = $Timers/Tornado
 onready var power_cell_timer = $Timers/PowerCell
 onready var food_timer = $Timers/Food
 onready var interface = $Interface
-onready var cursor = $Cursor
+
 
 func _unhandled_input(event):
-	var mouse_position = grid.world_to_world(get_global_mouse_position())
-	if mouse_position != cursor.position:
-		emit_signal("tile_changed", mouse_position)
-	
 	if event.is_action_pressed("click_left"):
 		var mouse_cell = grid.world_to_map(get_local_mouse_position())
 		var mouse_location = grid.get_location_at(mouse_cell)
@@ -60,7 +55,6 @@ func _ready():
 	Survivors(Global.unit_data.survivors)
 	interface.set_breakpoint_time(Global.game_time)
 	connect("game_over", self, "_on_game_over")
-	connect("tile_changed", self, "_on_tile_changed")
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
@@ -279,9 +273,6 @@ func _all_quadrants_destroyed():
 		if quadrant.level < 4:
 			return false
 	return true
-
-func _on_tile_changed(position):
-	cursor.position = position
 
 func _on_game_over(cause):
 	Global.defeat_reason = cause
