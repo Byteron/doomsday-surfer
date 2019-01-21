@@ -6,7 +6,7 @@
 [ext_resource path="res://source/interface/gui/EnergyBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://graphics/interface/cursor.png" type="Texture" id=5]
 
-[node name="Interface" type="CanvasLayer"]
+[node name="Interface" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -30,7 +30,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 0.627451 )
+color = Color( 0, 0, 0, 0.470588 )
 
 [node name="BreakPoint" parent="BorderRight" index="0" instance=ExtResource( 2 )]
 
@@ -48,7 +48,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 0.627451 )
+color = Color( 0, 0, 0, 0.470588 )
 
 [node name="Quadrant3" type="Control" parent="." index="2"]
 
