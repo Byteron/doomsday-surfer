@@ -74,18 +74,26 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 bbcode_enabled = true
 bbcode_text = "[center]
-Code : Bitron
-Artwork : Corvato
-Sounds % Music : Corvato & Hambient
+Code by Bitron
+
+Artwork by CorvatoCafeto (@CorvatoC)
+
+Music by Loyalty Freak Music
+
+Special thanks to Hambient, Ktosox and Subset Games
 [/center]"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
 text = "
-Code : Bitron
-Artwork : Corvato
-Sounds % Music : Corvato & Hambient
+Code by Bitron
+
+Artwork by CorvatoCafeto (@CorvatoC)
+
+Music by Loyalty Freak Music
+
+Special thanks to Hambient, Ktosox and Subset Games
 "
 scroll_active = true
 scroll_following = false
