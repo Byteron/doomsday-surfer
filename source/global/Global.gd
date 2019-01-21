@@ -8,6 +8,7 @@ var defeat_reason = null
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/Game.tscn"
 var Story = "res://source/interface/menu/StoryText.tscn"
+var Credits = "res://source/interface/menu/Credits.tscn"
 var Options = "res://source/interface/menu/Options.tscn"
 var Sold = "res://source/interface/menu/Sold.tscn"
 var GameOver = "res://source/interface/menu/GameOver.tscn"

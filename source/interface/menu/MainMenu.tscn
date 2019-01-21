@@ -75,10 +75,8 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = -110.0
-margin_right = -9.0
-margin_bottom = -7.0
+margin_top = -113.0
+margin_bottom = -13.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -86,8 +84,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 10
-alignment = 0
-_sections_unfolded = [ "custom_constants" ]
+alignment = 1
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
 [node name="Button" parent="HBoxContainer" index="0" instance=ExtResource( 5 )]
 
@@ -95,10 +93,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
+margin_left = 53.0
 margin_top = 0.0
-margin_right = 241.0
-margin_bottom = 103.0
+margin_right = 203.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+size_flags_horizontal = 1
 text = "Start"
 
 [node name="Button2" parent="HBoxContainer" index="1" instance=ExtResource( 5 )]
@@ -107,27 +107,47 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 251.0
+margin_left = 213.0
 margin_top = 0.0
-margin_right = 497.0
-margin_bottom = 103.0
+margin_right = 381.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+size_flags_horizontal = 1
 text = "Options"
 
-[node name="Button3" parent="HBoxContainer" index="2" instance=ExtResource( 5 )]
+[node name="Button4" parent="HBoxContainer" index="2" instance=ExtResource( 5 )]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 507.0
+margin_left = 391.0
 margin_top = 0.0
-margin_right = 749.0
-margin_bottom = 103.0
+margin_right = 555.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+size_flags_horizontal = 1
+text = "Credits"
+
+[node name="Button3" parent="HBoxContainer" index="3" instance=ExtResource( 5 )]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 565.0
+margin_top = 0.0
+margin_right = 715.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+size_flags_horizontal = 1
 text = "Exit"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
 
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+
+[connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
 
 [connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 
