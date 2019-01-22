@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/tilesets/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://source/game/Grid.gd" type="Script" id=2]
+
+[node name="Grid" type="TileMap"]
+
+visible = false
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 65537, 9, 0, 65538, 9, 0, 65539, 9, 0, 65540, 9, 0, 131073, 9, 0, 131074, 9, 0, 131075, 9, 0, 131076, 9, 0, 196609, 9, 0, 196610, 9, 0, 196611, 9, 0, 196612, 9, 0 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+
