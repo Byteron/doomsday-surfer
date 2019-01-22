@@ -5,6 +5,7 @@ var defeat_reason = null
 
 # scenes
 var DoomsdaySurferTutorial = "res://source/game/tutorials/DoomsdaySurferTutorial.tscn"
+var PowerCollectorTutorial = "res://source/game/tutorials/PowerCollectorTutorial.tscn"
 
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/game/Game.tscn"

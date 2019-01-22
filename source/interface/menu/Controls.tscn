@@ -11,7 +11,7 @@
 [ext_resource path="res://graphics/units/crimson/kaiju_plant.png" type="Texture" id=9]
 [ext_resource path="res://graphics/units/bad_kaiju/enemy_kaiju.png" type="Texture" id=10]
 
-[node name="Controls" type="Control"]
+[node name="Controls" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -175,7 +175,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 80.0
+margin_left = 203.0
+margin_right = 283.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -187,34 +188,29 @@ size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/PowerCollector" index="1"]
+[node name="CollectorTutorial" type="Button" parent="CenterContainer/VBoxContainer/PowerCollector" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 84.0
-margin_right = 580.0
+margin_left = 287.0
+margin_right = 377.0
 margin_bottom = 80.0
-rect_min_size = Vector2( 400, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
+size_flags_horizontal = 1
 size_flags_vertical = 1
-bbcode_enabled = true
-bbcode_text = "The Power Collector has to collect power cells for the CCC - the Clima Control Center. If a specific amount of power cells have been gathered, the disasters of the area with the highest danger level disapear to create save room for our units and space for more items to spawn."
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "The Power Collector has to collect power cells for the CCC - the Clima Control Center. If a specific amount of power cells have been gathered, the disasters of the area with the highest danger level disapear to create save room for our units and space for more items to spawn."
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect" ]
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play Tutorial"
+flat = false
+align = 1
 
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/PowerCollector" index="2"]
 
@@ -222,8 +218,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 584.0
-margin_right = 664.0
+margin_left = 381.0
+margin_right = 461.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -431,6 +427,8 @@ align = 1
 _sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/DoomsdaySurfer/DoomsdayTutorial" to="." method="_on_DoomsdayTutorial_pressed"]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PowerCollector/CollectorTutorial" to="." method="_on_CollectorTutorial_pressed"]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]
 

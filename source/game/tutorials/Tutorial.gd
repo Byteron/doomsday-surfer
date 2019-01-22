@@ -43,6 +43,10 @@ func _unhandled_input(event):
 func _ready():
 	connect("game_over", self, "_on_game_over")
 
+func animate_markers():
+	for quadrant in quadrants:
+		quadrant.start_marker()
+
 func set_active_unit(unit):
 	if active_unit:
 		active_unit.unselect()
@@ -125,6 +129,20 @@ func _on_Tornado_timeout():
 func _get_quadrant_timer(quadrant):
 	return $Timers.get_child(quadrant)
 
+func _kill_unit(loc):
+	if loc.unit:
+		if loc.unit.name == "DoomsdaySurfer":
+			emit_signal("game_over", "Doomsday Surfer died")
+		if loc.unit.name == "Survivors":
+			emit_signal("game_over", "Survivors died")
+		if loc.unit.name == "PowerCollector":
+			emit_signal("game_over", "PowerCollector died")
+		if loc.unit.name == "KaijuPlant":
+			emit_signal("game_over", "Plant Kaiju died")
+		loc.unit.queue_free()
+		loc.unit = null
+		set_active_unit(null)
+
 func _check_game_over():
 	if _all_quadrants_destroyed():
 		emit_signal("game_over", "All Quadrants have been destroyed")
@@ -136,4 +154,4 @@ func _all_quadrants_destroyed():
 	return true
 
 func _game_over():
-	Transition.change_scene(Global.GameOver)
+	Transition.change_scene(Global.Controls)
