@@ -39,19 +39,15 @@ var tornado_tex = load("res://graphics/terrain/tornado.png")
 # unit data
 var unit_data = {
 	doomsday_surfer = {
-		name = "DoomsdaySurfer",
-		tex = load("res://graphics/units/doomsday_surfer.png")
+		name = "DoomsdaySurfer"
 	},
 	kaiju_plant = {
-		name = "KaijuPlant",
-		tex = load("res://graphics/units/kaiju_plant.png")
+		name = "KaijuPlant"
 	},
 	power_collector = {
-		name = "PowerCollector",
-		tex = load("res://graphics/units/power_collector.png")
+		name = "PowerCollector"
 	},
 	survivors = {
-		name = "Survivors",
-		tex = load("res://graphics/units/survivors.png")
+		name = "Survivors"
 	}
 }

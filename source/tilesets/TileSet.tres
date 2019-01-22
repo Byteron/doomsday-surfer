@@ -8,8 +8,6 @@
 [ext_resource path="res://graphics/interface/gui/tile02.png" type="Texture" id=6]
 [ext_resource path="res://graphics/interface/gui/tile03.png" type="Texture" id=7]
 
-
-
 [resource]
 
 0/name = "tsunami"
