@@ -62,7 +62,6 @@ func _ready():
 	connect("game_over", self, "_on_game_over")
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
-	place_kaiju_enemy_marker()
 	get_tree().call_group("Marker", "animate")
 	get_tree().call_group("Timer", "start")
 

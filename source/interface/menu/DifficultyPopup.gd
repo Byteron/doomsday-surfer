@@ -1,7 +1,7 @@
 extends Popup
 
 func _on_Tutorial_pressed():
-	print("Tutorial")
+	Transition.change_scene(Global.Controls)
 
 func _on_Easy_pressed():
 	Difficulty.easy()

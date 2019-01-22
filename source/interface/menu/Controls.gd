@@ -8,3 +8,9 @@ func _on_DoomsdayTutorial_pressed():
 
 func _on_CollectorTutorial_pressed():
 	Transition.change_scene(Global.PowerCollectorTutorial)
+
+func _on_SurvivorsTutorial_pressed():
+	Transition.change_scene(Global.SurvivorsTutorial)
+
+func _on_KaijuPlantTutorial_pressed():
+	Transition.change_scene(Global.KaijuPlantTutorial)

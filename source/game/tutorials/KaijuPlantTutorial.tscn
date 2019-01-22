@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/game/tutorials/Tutorial.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/game/tutorials/KaijuPlantTutorial.gd" type="Script" id=2]
+
+[node name="KaijuPlantTutorial" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="EnemyMove" type="Timer" parent="Timers" index="4"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="EnemySpawn" type="Timer" parent="Timers" index="5" groups=[
+"Timer",
+]]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timers/EnemyMove" to="." method="_on_EnemyMove_timeout"]
+
+[connection signal="timeout" from="Timers/EnemySpawn" to="." method="_on_EnemySpawn_timeout"]
+
+
+[editable path="Interface"]

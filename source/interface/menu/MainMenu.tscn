@@ -93,65 +93,51 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 33.0
+margin_left = 88.0
 margin_top = 0.0
-margin_right = 162.0
+margin_right = 217.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 1
 text = "Start"
 
-[node name="Button5" parent="HBoxContainer" index="1" instance=ExtResource( 5 )]
+[node name="Button2" parent="HBoxContainer" index="1" instance=ExtResource( 5 )]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 172.0
+margin_left = 227.0
 margin_top = 0.0
-margin_right = 273.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
-size_flags_horizontal = 1
-text = "CTRL"
-
-[node name="Button2" parent="HBoxContainer" index="2" instance=ExtResource( 5 )]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 283.0
-margin_top = 0.0
-margin_right = 451.0
+margin_right = 395.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 1
 text = "Options"
 
-[node name="Button4" parent="HBoxContainer" index="3" instance=ExtResource( 5 )]
+[node name="Button4" parent="HBoxContainer" index="2" instance=ExtResource( 5 )]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 461.0
+margin_left = 405.0
 margin_top = 0.0
-margin_right = 625.0
+margin_right = 569.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 1
 text = "Credits"
 
-[node name="Button3" parent="HBoxContainer" index="4" instance=ExtResource( 5 )]
+[node name="Button3" parent="HBoxContainer" index="3" instance=ExtResource( 5 )]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 635.0
+margin_left = 579.0
 margin_top = 0.0
-margin_right = 735.0
+margin_right = 679.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 1
@@ -162,8 +148,6 @@ text = "Exit"
 visible = false
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
-
-[connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_Button5_pressed"]
 
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 

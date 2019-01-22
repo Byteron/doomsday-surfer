@@ -11,7 +11,7 @@
 [ext_resource path="res://graphics/units/crimson/kaiju_plant.png" type="Texture" id=9]
 [ext_resource path="res://graphics/units/bad_kaiju/enemy_kaiju.png" type="Texture" id=10]
 
-[node name="Controls" type="Control" index="0"]
+[node name="Controls" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -62,9 +62,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 52.0
+margin_left = 5.0
 margin_top = 54.0
-margin_right = 716.0
+margin_right = 763.0
 margin_bottom = 458.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -80,7 +80,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 664.0
+margin_right = 758.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -96,8 +96,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 183.0
-margin_right = 263.0
+margin_left = 230.0
+margin_right = 310.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -115,8 +115,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 267.0
-margin_right = 357.0
+margin_left = 314.0
+margin_right = 404.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -139,8 +139,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 361.0
-margin_right = 480.0
+margin_left = 408.0
+margin_right = 527.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -159,7 +159,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 84.0
-margin_right = 664.0
+margin_right = 758.0
 margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -175,8 +175,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 203.0
-margin_right = 283.0
+margin_left = 250.0
+margin_right = 330.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -194,8 +194,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 287.0
-margin_right = 377.0
+margin_left = 334.0
+margin_right = 424.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -218,8 +218,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 381.0
-margin_right = 461.0
+margin_left = 428.0
+margin_right = 508.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -238,7 +238,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 168.0
-margin_right = 664.0
+margin_right = 758.0
 margin_bottom = 248.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -254,7 +254,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 80.0
+margin_left = 250.0
+margin_right = 330.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -266,34 +267,29 @@ size_flags_vertical = 1
 texture = ExtResource( 7 )
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/Survivors" index="1"]
+[node name="SurvivorsTutorial" type="Button" parent="CenterContainer/VBoxContainer/Survivors" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 84.0
-margin_right = 580.0
+margin_left = 334.0
+margin_right = 424.0
 margin_bottom = 80.0
-rect_min_size = Vector2( 400, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
+size_flags_horizontal = 1
 size_flags_vertical = 1
-bbcode_enabled = true
-bbcode_text = "The Survivors are on the brink of extinction. Avoid disasters, flee from enemies and gather food to keep them alive!"
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "The Survivors are on the brink of extinction. Avoid disasters, flee from enemies and gather food to keep them alive!"
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect" ]
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play Tutorial"
+flat = false
+align = 1
 
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/Survivors" index="2"]
 
@@ -301,8 +297,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 584.0
-margin_right = 664.0
+margin_left = 428.0
+margin_right = 508.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -321,7 +317,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 252.0
-margin_right = 664.0
+margin_right = 758.0
 margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -337,7 +333,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 128.0
+margin_left = 202.0
+margin_right = 330.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -349,38 +346,29 @@ size_flags_vertical = 1
 texture = ExtResource( 9 )
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/KaijuPlant" index="1"]
+[node name="KaijuPlantTutorial" type="Button" parent="CenterContainer/VBoxContainer/KaijuPlant" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 132.0
-margin_right = 532.0
+margin_left = 334.0
+margin_right = 424.0
 margin_bottom = 128.0
-rect_min_size = Vector2( 400, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
+size_flags_horizontal = 1
 size_flags_vertical = 1
-bbcode_enabled = true
-bbcode_text = "Your Plant Kaiju is the only unit who is strong enough to fight the appearing enemy kaijus!
-Move it on the field of the enemy kaiju to kill it. 
-Note: It gets killed when the enemy kaiju moves onto the plant kaijus field. Beware!"
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "Your Plant Kaiju is the only unit who is strong enough to fight the appearing enemy kaijus!
-Move it on the field of the enemy kaiju to kill it. 
-Note: It gets killed when the enemy kaiju moves onto the plant kaijus field. Beware!"
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect" ]
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play Tutorial"
+flat = false
+align = 1
 
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/KaijuPlant" index="2"]
 
@@ -388,8 +376,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 536.0
-margin_right = 664.0
+margin_left = 428.0
+margin_right = 556.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -408,7 +396,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 384.0
-margin_right = 664.0
+margin_right = 758.0
 margin_bottom = 404.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -429,6 +417,10 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/DoomsdaySurfer/DoomsdayTutorial" to="." method="_on_DoomsdayTutorial_pressed"]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PowerCollector/CollectorTutorial" to="." method="_on_CollectorTutorial_pressed"]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Survivors/SurvivorsTutorial" to="." method="_on_SurvivorsTutorial_pressed"]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/KaijuPlant/KaijuPlantTutorial" to="." method="_on_KaijuPlantTutorial_pressed"]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]
 

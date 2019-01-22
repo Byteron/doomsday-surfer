@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/game/tutorials/Tutorial.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/game/tutorials/SurvivorsTutorial.gd" type="Script" id=2]
+
+[node name="SurvivorsTutorial" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Tsunami" parent="Timers" index="0"]
+
+wait_time = 30.0
+
+[node name="Lava" parent="Timers" index="1"]
+
+wait_time = 30.0
+
+[node name="Earthquake" parent="Timers" index="2"]
+
+wait_time = 30.0
+
+[node name="Tornado" parent="Timers" index="3"]
+
+wait_time = 30.0
+
+[node name="Food" type="Timer" parent="Timers" index="4" groups=[
+"Timer",
+]]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Timers/Food" to="." method="_on_Food_timeout"]
+
+
+[editable path="Interface"]
