@@ -1,12 +1,11 @@
 extends Node
 
 # variables
-var game_time = 60 # in seconds
 var defeat_reason = null
 
 # scenes
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
-var Game = "res://source/Game.tscn"
+var Game = "res://source/game/Game.tscn"
 var Story = "res://source/interface/menu/StoryText.tscn"
 var Credits = "res://source/interface/menu/Credits.tscn"
 var Controls = "res://source/interface/menu/Controls.tscn"

@@ -1,0 +1,74 @@
+extends Node
+
+# general
+var game_time = 0
+
+# disasters
+var tsunami_time = 0
+var lava_time = 0
+var earthquake_time = 0
+var tornado_time = 0
+
+# power collector
+var power_cell_time = 0
+var power_cell_amount = 0
+
+# survivors
+var food_time = 0
+var food_fill = 0
+var food_amount = 0
+var food_tick = 0
+
+# plant kaiju
+var enemy_move_time = 0
+var enemy_spawn_time = 0
+
+# doomsday surfer
+var surf_time = 0
+
+func easy():
+	game_time = 45
+	tsunami_time = 14
+	lava_time = 17
+	earthquake_time = 17
+	tornado_time = 14
+	power_cell_time = 3
+	power_cell_amount = 3
+	food_time = 3
+	food_fill = 3
+	food_tick = 3
+	food_amount = 10
+	enemy_move_time = 8
+	enemy_spawn_time = 12
+	surf_time = 12
+func medium():
+	game_time = 60
+	tsunami_time = 11
+	lava_time = 15
+	earthquake_time = 16
+	tornado_time = 13
+	power_cell_time = 3
+	power_cell_amount = 4
+	food_time = 3
+	food_fill = 2
+	food_tick = 3
+	food_amount = 8
+	enemy_move_time = 5
+	enemy_spawn_time = 10
+	surf_time = 10
+	
+func hard():
+	game_time = 90
+	tsunami_time = 10
+	lava_time = 13
+	earthquake_time = 12
+	tornado_time = 11
+	power_cell_time = 2
+	power_cell_amount = 6
+	food_time = 2
+	food_fill = 2
+	food_tick = 2
+	food_amount = 6
+	enemy_move_time = 2
+	enemy_spawn_time = 8
+	surf_time = 8

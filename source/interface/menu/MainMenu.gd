@@ -1,7 +1,10 @@
 extends Node
 
+onready var difficulty_popup = $DifficultyPopup
+
 func _on_Button_pressed():
-	Transition.change_scene(Global.Story)
+	difficulty_popup.popup_centered()
+	# Transition.change_scene(Global.Story)
 
 func _on_Button2_pressed():
 	Transition.change_scene(Global.Options)

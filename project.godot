@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Global="*res://source/global/Global.gd"
 Transition="*res://source/global/Transition.tscn"
+Difficulty="*res://source/global/Difficulty.gd"
 
 [display]
 

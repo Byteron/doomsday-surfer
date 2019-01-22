@@ -24,6 +24,18 @@ func _ready():
 func set_breakpoint_time(time):
 	breakpoint_bar.set_time(time)
 
+func set_hunger_tick(time):
+	hunger_bar.set_food_time(time)
+
+func set_hunger_fill(fill):
+	hunger_bar.set_food_fill(fill)
+
+func set_hunger_amount(amount):
+	hunger_bar.set_food_amount(amount)
+
+func set_power_cell_amount(amount):
+	energy_bar.max_value = amount
+
 func decrease_hunger():
 	hunger_bar.decrease()
 

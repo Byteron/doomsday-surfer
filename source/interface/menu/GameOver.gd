@@ -7,8 +7,7 @@ func _ready():
 		reason_label.text = Global.defeat_reason
 
 func _on_Button_pressed():
-		Global.game_time = 60
 		Transition.change_scene(Global.Game)
 
 func _on_Button2_pressed():
-	Transition.change_scene(Global.Tutorial)
+	Transition.change_scene(Global.Game)

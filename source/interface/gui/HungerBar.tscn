@@ -5,7 +5,6 @@
 [ext_resource path="res://graphics/interface/gui/back_hunger_texture.png" type="Texture" id=3]
 [ext_resource path="res://source/interface/gui/HungerBar.gd" type="Script" id=4]
 
-
 [node name="HungerBar" type="TextureProgress"]
 
 anchor_left = 0.0
@@ -39,12 +38,14 @@ nine_patch_stretch = false
 script = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Timer" type="Timer" parent="." index="0"]
+[node name="Timer" type="Timer" parent="." index="0" groups=[
+"Timer",
+]]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
-autostart = true
+autostart = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
