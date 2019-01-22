@@ -54,18 +54,19 @@ func _unhandled_input(event):
 			set_active_unit(unit)
 
 func _ready():
-	DoomsdaySurfer(Global.unit_data.doomsday_surfer)
-	KaijuPlant(Global.unit_data.kaiju_plant)
-	PowerCollector(Global.unit_data.power_collector)
-	Survivors(Global.unit_data.survivors)
+	DoomsdaySurfer()
+	KaijuPlant()
+	PowerCollector()
+	Survivors()
 	_apply_difficulty()
 	connect("game_over", self, "_on_game_over")
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
 	place_kaiju_enemy_marker()
+	get_tree().call_group("Marker", "animate")
 	get_tree().call_group("Timer", "start")
 
-func DoomsdaySurfer(data):
+func DoomsdaySurfer():
 	var unit = Global.DoomsdaySurfer.instance()
 	doomsday_surfer = unit
 	unit.connect("surfer_moved", self, "_on_surfer_moved")
@@ -75,21 +76,21 @@ func DoomsdaySurfer(data):
 	unit.initialize(loc)
 	units.add_child(unit)
 
-func KaijuPlant(data):
+func KaijuPlant():
 	var unit = Global.KaijuPlant.instance()
 	kaiju_plant = unit
 	unit.connect("killed_enemy_kaiju", self, "_on_enemy_kaiju_killed")
 	unit.initialize(grid.get_location_at(Vector2(3, 0)))
 	units.add_child(unit)
 
-func PowerCollector(data):
+func PowerCollector():
 	var unit = Global.PowerCollector.instance()
 	power_collector = unit
 	unit.connect("power_cell_collected", self, "_on_power_cell_collected")
 	unit.initialize(grid.get_location_at(Vector2(1, 2)))
 	units.add_child(unit)
 
-func Survivors(data):
+func Survivors():
 	var unit = Global.Survivors.instance()
 	survivors = unit
 	unit.connect("food_collected", self, "_on_food_collected")
@@ -171,6 +172,7 @@ func _apply_difficulty():
 	$Timers/EnemyKaijuTimer.wait_time = Difficulty.enemy_move_time
 	$Timers/EnemyKaijuDeathTimer.wait_time = Difficulty.enemy_spawn_time
 	
+	doomsday_surfer.set_surfing_time(Difficulty.surf_time)
 #
 # S I G N A L   F U N C
 #

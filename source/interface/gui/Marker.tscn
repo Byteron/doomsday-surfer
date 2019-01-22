@@ -3,7 +3,9 @@
 [ext_resource path="res://graphics/interface/gui/next_grow.png" type="Texture" id=1]
 [ext_resource path="res://source/interface/gui/Marker.gd" type="Script" id=2]
 
-[node name="Marker" type="Sprite" index="0"]
+[node name="Marker" type="Sprite" groups=[
+"Marker",
+]]
 
 self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 1 )

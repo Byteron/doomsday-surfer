@@ -9,6 +9,9 @@ func move_to(loc):
 	.move_to(loc)
 	surfer(loc)
 
+func set_surfing_time(time):
+	$QuadrantFreezeTimer.wait_time = time
+
 func surfer(loc):
 	if last_quadrant != loc.quadrant:
 		var last = last_quadrant

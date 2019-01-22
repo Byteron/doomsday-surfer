@@ -2,14 +2,12 @@ extends Node2D
 
 onready var marker = $Marker
 
-func clear():
-	for child in get_children():
-		child.queue_free()
-
 func start_marker():
+	print(name, ": start_marker")
 	marker.animate()
 
 func reset_marker():
+	print(name, ": reset marker")
 	marker.stop()
 	marker.reset()
 

@@ -4,6 +4,8 @@ extends Node
 var defeat_reason = null
 
 # scenes
+var DoomsdaySurferTutorial = "res://source/game/tutorials/DoomsdaySurferTutorial.tscn"
+
 var MainMenu = "res://source/interface/menu/MainMenu.tscn"
 var Game = "res://source/game/Game.tscn"
 var Story = "res://source/interface/menu/StoryText.tscn"
@@ -30,24 +32,10 @@ var Disaster = load("res://source/items/Disaster.tscn")
 var PowerCell = load("res://source/items/PowerCell.tscn")
 var Food = load("res://source/items/Food.tscn")
 
+var PopupText = load("res://source/interface/gui/PopupText.tscn")
+
 # textures
 var tsunami_tex = load("res://graphics/terrain/tsunami.png")
 var lava_tex = load("res://graphics/terrain/lava.png")
 var earthquake_tex = load("res://graphics/terrain/earthquake.png")
 var tornado_tex = load("res://graphics/terrain/tornado.png")
-
-# unit data
-var unit_data = {
-	doomsday_surfer = {
-		name = "DoomsdaySurfer"
-	},
-	kaiju_plant = {
-		name = "KaijuPlant"
-	},
-	power_collector = {
-		name = "PowerCollector"
-	},
-	survivors = {
-		name = "Survivors"
-	}
-}

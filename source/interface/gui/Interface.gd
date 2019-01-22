@@ -21,6 +21,15 @@ func _ready():
 	energy_bar.connect("charged", self, "_on_EnergyBar_charged")
 	hunger_bar.connect("starved", self, "_on_HungerBar_starved")
 
+func hide_breakpoint_bar():
+	breakpoint_bar.hide()
+
+func hide_energy_bar():
+	energy_bar.hide()
+
+func hide_hunger_bar():
+	hunger_bar.hide()
+
 func set_breakpoint_time(time):
 	breakpoint_bar.set_time(time)
 
