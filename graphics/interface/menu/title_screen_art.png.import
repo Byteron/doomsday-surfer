@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/concept_art3.png-5ef91b746e633a933ea38bcd476c7e1b.stex"
+path="res://.import/title_screen_art.png-da3618ffff5dc0c49500ba96ef23e018.stex"
 
 [deps]
 
-source_file="res://graphics/interface/menu/concept_art3.png"
-dest_files=[ "res://.import/concept_art3.png-5ef91b746e633a933ea38bcd476c7e1b.stex" ]
+source_file="res://graphics/interface/menu/title_screen_art.png"
+dest_files=[ "res://.import/title_screen_art.png-da3618ffff5dc0c49500ba96ef23e018.stex" ]
 
 [params]
 

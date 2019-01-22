@@ -2,14 +2,20 @@
 
 [ext_resource path="res://source/interface/menu/Controls.gd" type="Script" id=1]
 [ext_resource path="res://graphics/interface/menu/screen_texture.png" type="Texture" id=2]
-[ext_resource path="res://graphics/units/doomsday_surfer.png" type="Texture" id=3]
-[ext_resource path="res://graphics/units/surfer_board.png" type="Texture" id=4]
-[ext_resource path="res://graphics/units/power_collector.png" type="Texture" id=5]
+[ext_resource path="res://graphics/units/surfer/doomsday_surfer.png" type="Texture" id=3]
+[ext_resource path="res://graphics/units/surfer/surfer_board.png" type="Texture" id=4]
+[ext_resource path="res://graphics/units/collector/power_collector.png" type="Texture" id=5]
 [ext_resource path="res://graphics/items/power_cell.png" type="Texture" id=6]
-[ext_resource path="res://graphics/units/survivors.png" type="Texture" id=7]
+[ext_resource path="res://graphics/units/survivors/survivors.png" type="Texture" id=7]
 [ext_resource path="res://graphics/items/chicken.png" type="Texture" id=8]
-[ext_resource path="res://graphics/units/kaiju_plant.png" type="Texture" id=9]
-[ext_resource path="res://graphics/units/enemy_kaiju.png" type="Texture" id=10]
+[ext_resource path="res://graphics/units/crimson/kaiju_plant.png" type="Texture" id=9]
+[ext_resource path="res://graphics/units/bad_kaiju/enemy_kaiju.png" type="Texture" id=10]
+
+
+
+
+
+
 
 [node name="Controls" type="Control"]
 

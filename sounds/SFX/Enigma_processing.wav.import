@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Enigma_processing.wav-2d59b6e49e62769b34d4b2ddf61a25e0.sample"
+
+[deps]
+
+source_file="res://sounds/SFX/Enigma_processing.wav"
+dest_files=[ "res://.import/Enigma_processing.wav-2d59b6e49e62769b34d4b2ddf61a25e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

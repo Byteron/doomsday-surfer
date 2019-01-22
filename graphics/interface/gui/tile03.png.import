@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept.png-a43909de22d7ece5224dadf6ac7fa0f1.stex"
+path="res://.import/tile03.png-579fc4cd10da6773514389c2d10fc35a.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept.png"
-dest_files=[ "res://.import/scenario_concept.png-a43909de22d7ece5224dadf6ac7fa0f1.stex" ]
+source_file="res://graphics/interface/gui/tile03.png"
+dest_files=[ "res://.import/tile03.png-579fc4cd10da6773514389c2d10fc35a.stex" ]
 
 [params]
 

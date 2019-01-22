@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept7.png-6c2bf6a010b1543aa5d7d65070258c2f.stex"
+path="res://.import/kaiju_plant.png-99a6a849c0c1602ca7d63026dec6506e.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept7.png"
-dest_files=[ "res://.import/scenario_concept7.png-6c2bf6a010b1543aa5d7d65070258c2f.stex" ]
+source_file="res://graphics/units/crimson/kaiju_plant.png"
+dest_files=[ "res://.import/kaiju_plant.png-99a6a849c0c1602ca7d63026dec6506e.stex" ]
 
 [params]
 

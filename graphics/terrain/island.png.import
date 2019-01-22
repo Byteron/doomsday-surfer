@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/power_collector.png-b4c2b6b26f732399bb5c14ed1f6ebdaf.stex"
+path="res://.import/island.png-c384b9698cf612d3d1e31e89201be088.stex"
 
 [deps]
 
-source_file="res://graphics/units/power_collector.png"
-dest_files=[ "res://.import/power_collector.png-b4c2b6b26f732399bb5c14ed1f6ebdaf.stex" ]
+source_file="res://graphics/terrain/island.png"
+dest_files=[ "res://.import/island.png-c384b9698cf612d3d1e31e89201be088.stex" ]
 
 [params]
 

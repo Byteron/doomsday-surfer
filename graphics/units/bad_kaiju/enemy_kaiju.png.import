@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept3.png-2293a24ba8e377eca567adddb08c6442.stex"
+path="res://.import/enemy_kaiju.png-bd6f3a56bc6d19c68ea7eaf9bb0bcf3c.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/scenario_concept3.png"
-dest_files=[ "res://.import/scenario_concept3.png-2293a24ba8e377eca567adddb08c6442.stex" ]
+source_file="res://graphics/units/bad_kaiju/enemy_kaiju.png"
+dest_files=[ "res://.import/enemy_kaiju.png-bd6f3a56bc6d19c68ea7eaf9bb0bcf3c.stex" ]
 
 [params]
 
