@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/invisbl_tile128.png-57259bd3d1639352178923867c62ec67.stex"
+path="res://.import/next_grow.png-a928e6971462aeefaad3775c12910db7.stex"
 
 [deps]
 
-source_file="res://graphics/interface/invisbl_tile128.png"
-dest_files=[ "res://.import/invisbl_tile128.png-57259bd3d1639352178923867c62ec67.stex" ]
+source_file="res://graphics/interface/gui/next_grow.png"
+dest_files=[ "res://.import/next_grow.png-a928e6971462aeefaad3775c12910db7.stex" ]
 
 [params]
 

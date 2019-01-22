@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fill_bar_texture.png-b52a10aa122c081e447852e2fec4c341.stex"
+path="res://.import/screen_texture.png-4a7507c41fe598435996b0b298c07c9b.stex"
 
 [deps]
 
-source_file="res://graphics/interface/fill_bar_texture.png"
-dest_files=[ "res://.import/fill_bar_texture.png-b52a10aa122c081e447852e2fec4c341.stex" ]
+source_file="res://graphics/interface/menu/screen_texture.png"
+dest_files=[ "res://.import/screen_texture.png-4a7507c41fe598435996b0b298c07c9b.stex" ]
 
 [params]
 

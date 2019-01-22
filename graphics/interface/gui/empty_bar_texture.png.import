@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenario_concept7.png-bf05019e818577f6c1047d02b538f022.stex"
+path="res://.import/empty_bar_texture.png-d327e68b4f943aa856587862a6d67442.stex"
 
 [deps]
 
-source_file="res://scenario_concept7.png"
-dest_files=[ "res://.import/scenario_concept7.png-bf05019e818577f6c1047d02b538f022.stex" ]
+source_file="res://graphics/interface/gui/empty_bar_texture.png"
+dest_files=[ "res://.import/empty_bar_texture.png-d327e68b4f943aa856587862a6d67442.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

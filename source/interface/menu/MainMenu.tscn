@@ -2,11 +2,11 @@
 
 [ext_resource path="res://source/interface/menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://sounds/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=2]
-[ext_resource path="res://graphics/concept_art3.png" type="Texture" id=3]
+[ext_resource path="res://graphics/interface/menu/concept_art3.png" type="Texture" id=3]
 [ext_resource path="res://graphics/fonts/Menu_DynamicFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://source/interface/menu/MainMenu_Button.tscn" type="PackedScene" id=5]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

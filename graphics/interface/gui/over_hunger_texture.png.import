@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile.png-8d82ef957230e4de385a924f57753a33.stex"
+path="res://.import/over_hunger_texture.png-b1138789b4693a7fc689e448c683ade0.stex"
 
 [deps]
 
-source_file="res://graphics/interface/tile.png"
-dest_files=[ "res://.import/tile.png-8d82ef957230e4de385a924f57753a33.stex" ]
+source_file="res://graphics/interface/gui/over_hunger_texture.png"
+dest_files=[ "res://.import/over_hunger_texture.png-b1138789b4693a7fc689e448c683ade0.stex" ]
 
 [params]
 

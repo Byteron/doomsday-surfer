@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile02.png-ef0bb12b42ada23de61fa4ba96863370.stex"
+path="res://.import/concept_art3.png-5ef91b746e633a933ea38bcd476c7e1b.stex"
 
 [deps]
 
-source_file="res://graphics/interface/tile02.png"
-dest_files=[ "res://.import/tile02.png-ef0bb12b42ada23de61fa4ba96863370.stex" ]
+source_file="res://graphics/interface/menu/concept_art3.png"
+dest_files=[ "res://.import/concept_art3.png-5ef91b746e633a933ea38bcd476c7e1b.stex" ]
 
 [params]
 

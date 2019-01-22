@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enigma2_happy.png-df2a9c0a9e34b90bf4be685ac76ad2c5.stex"
+path="res://.import/tile02.png-850be5a4e80f78cdd03136ca228d0d35.stex"
 
 [deps]
 
-source_file="res://graphics/enigma2_happy.png"
-dest_files=[ "res://.import/enigma2_happy.png-df2a9c0a9e34b90bf4be685ac76ad2c5.stex" ]
+source_file="res://graphics/interface/gui/tile02.png"
+dest_files=[ "res://.import/tile02.png-850be5a4e80f78cdd03136ca228d0d35.stex" ]
 
 [params]
 

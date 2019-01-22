@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/back_hunger_texture.png-1904de1430c8efce08c257b53c40be82.stex"
+path="res://.import/enigma2.png-131498df448fbfd869e899df7b042e93.stex"
 
 [deps]
 
-source_file="res://graphics/interface/back_hunger_texture.png"
-dest_files=[ "res://.import/back_hunger_texture.png-1904de1430c8efce08c257b53c40be82.stex" ]
+source_file="res://graphics/interface/menu/enigma2.png"
+dest_files=[ "res://.import/enigma2.png-131498df448fbfd869e899df7b042e93.stex" ]
 
 [params]
 

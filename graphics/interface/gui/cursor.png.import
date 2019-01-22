@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enigma2.png-cd692312bcefbf61dff634140eb1e1a9.stex"
+path="res://.import/cursor.png-0bdec2ecb2c4945b848b934bbd0ca580.stex"
 
 [deps]
 
-source_file="res://graphics/enigma2.png"
-dest_files=[ "res://.import/enigma2.png-cd692312bcefbf61dff634140eb1e1a9.stex" ]
+source_file="res://graphics/interface/gui/cursor.png"
+dest_files=[ "res://.import/cursor.png-0bdec2ecb2c4945b848b934bbd0ca580.stex" ]
 
 [params]
 

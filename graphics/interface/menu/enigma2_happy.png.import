@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/next_grow.png-51736156c3d3fc0561ffce01c1d81642.stex"
+path="res://.import/enigma2_happy.png-591b5fa6c96869c7be3c7f9c722463c3.stex"
 
 [deps]
 
-source_file="res://graphics/interface/next_grow.png"
-dest_files=[ "res://.import/next_grow.png-51736156c3d3fc0561ffce01c1d81642.stex" ]
+source_file="res://graphics/interface/menu/enigma2_happy.png"
+dest_files=[ "res://.import/enigma2_happy.png-591b5fa6c96869c7be3c7f9c722463c3.stex" ]
 
 [params]
 

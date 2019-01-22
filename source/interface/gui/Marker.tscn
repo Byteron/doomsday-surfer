@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://graphics/interface/next_grow.png" type="Texture" id=1]
+[ext_resource path="res://graphics/interface/gui/next_grow.png" type="Texture" id=1]
 [ext_resource path="res://source/interface/gui/Marker.gd" type="Script" id=2]
+
 
 [node name="Marker" type="Sprite"]
 

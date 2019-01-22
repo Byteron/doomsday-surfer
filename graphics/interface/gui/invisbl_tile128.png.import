@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/concept_art3.png-9bbb97bf1ca15c79d267a896e57a04ce.stex"
+path="res://.import/invisbl_tile128.png-121292cc06256fc7394f8a60a191cdd5.stex"
 
 [deps]
 
-source_file="res://graphics/concept_art3.png"
-dest_files=[ "res://.import/concept_art3.png-9bbb97bf1ca15c79d267a896e57a04ce.stex" ]
+source_file="res://graphics/interface/gui/invisbl_tile128.png"
+dest_files=[ "res://.import/invisbl_tile128.png-121292cc06256fc7394f8a60a191cdd5.stex" ]
 
 [params]
 
