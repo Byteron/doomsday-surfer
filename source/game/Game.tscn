@@ -3,7 +3,7 @@
 [ext_resource path="res://source/game/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/game/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interface/gui/Interface.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sounds/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sounds/Music/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=4]
 [ext_resource path="res://source/game/Quadrant.gd" type="Script" id=5]
 [ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/terrain/tsunami.png" type="Texture" id=7]
@@ -12,6 +12,9 @@
 [ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=10]
 [ext_resource path="res://source/tilesets/TileSet.tres" type="TileSet" id=11]
 [ext_resource path="res://source/game/Grid.gd" type="Script" id=12]
+
+
+
 
 [node name="Game" type="Node2D" index="0"]
 

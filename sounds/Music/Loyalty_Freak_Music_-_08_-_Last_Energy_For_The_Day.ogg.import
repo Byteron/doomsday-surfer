@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg-95fe7f491bf4fe995471f829882a289e.oggstr"
+
+[deps]
+
+source_file="res://sounds/Music/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg"
+dest_files=[ "res://.import/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg-95fe7f491bf4fe995471f829882a289e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

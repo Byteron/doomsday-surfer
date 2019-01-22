@@ -6,7 +6,8 @@
 [ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=4]
 [ext_resource path="res://graphics/terrain/earthquake.png" type="Texture" id=5]
 [ext_resource path="res://graphics/interface/gui/tile02.png" type="Texture" id=6]
-[ext_resource path="res://graphics/interface/gui/tile.png" type="Texture" id=7]
+[ext_resource path="res://graphics/interface/gui/tile03.png" type="Texture" id=7]
+
 
 
 [node name="TileSet" type="Node2D"]

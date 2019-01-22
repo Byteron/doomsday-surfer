@@ -3,7 +3,9 @@
 [ext_resource path="res://source/interface/menu/Options.gd" type="Script" id=1]
 [ext_resource path="res://graphics/interface/menu/screen_texture.png" type="Texture" id=2]
 [ext_resource path="res://source/interface/menu/MainMenu_Button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sounds/Laughter-Mike_Koenig-360558723.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/SFX/Laughter.wav" type="AudioStream" id=4]
+
+
 
 
 

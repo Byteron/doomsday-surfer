@@ -3,7 +3,9 @@
 [ext_resource path="res://source/interface/menu/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://graphics/interface/menu/screen_texture.png" type="Texture" id=2]
 [ext_resource path="res://graphics/interface/menu/enigma2_happy.png" type="Texture" id=3]
-[ext_resource path="res://sounds/Evil_Laugh_Male_6-Himan-1359990674.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/SFX/Enigma_laugh.wav" type="AudioStream" id=4]
+
+
 
 
 

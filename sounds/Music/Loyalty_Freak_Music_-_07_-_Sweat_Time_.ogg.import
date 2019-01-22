@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Loyalty_Freak_Music_-_07_-_Sweat_Time_.ogg-47a10c484e2de98f56798145777b42aa.oggstr"
+
+[deps]
+
+source_file="res://sounds/Music/Loyalty_Freak_Music_-_07_-_Sweat_Time_.ogg"
+dest_files=[ "res://.import/Loyalty_Freak_Music_-_07_-_Sweat_Time_.ogg-47a10c484e2de98f56798145777b42aa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
