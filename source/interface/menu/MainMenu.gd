@@ -11,3 +11,6 @@ func _on_Button3_pressed():
 
 func _on_Button4_pressed():
 	Transition.change_scene(Global.Credits)
+
+func _on_Button5_pressed():
+	Transition.change_scene(Global.Controls)
