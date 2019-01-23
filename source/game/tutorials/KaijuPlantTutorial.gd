@@ -8,6 +8,10 @@ var kaiju_plant = null
 var enemy_kaiju = null
 var enemy_kaiju_marker = null
 
+var enemy_killed = false
+var enemy_appeared = false
+var enemy_moved = false
+
 func _ready():
 	._ready()
 	interface.hide_energy_bar()
@@ -53,7 +57,9 @@ func _on_enemy_kaiju_killed(loc):
 	enemy_spawn_timer.start()
 	enemy_kaiju_marker.queue_free()
 	enemy_kaiju_marker = null
-	popup_text.popup_centered("Plant Kaiju", "You killed the Enemy Kaiju!! But it is not the only one. Others will appear with time, so keep your eyes wide open!")
+	if not enemy_killed:
+		enemy_killed = true
+		popup_text.popup_centered("Plant Kaiju", "You killed the Enemy Kaiju!! But it is not the only one. Others will appear with time, so keep your eyes wide open!")
 
 func _on_enemy_kaiju_killed_unit(loc):
 	_kill_unit(loc)
@@ -61,13 +67,17 @@ func _on_enemy_kaiju_killed_unit(loc):
 func _on_EnemyMove_timeout():
 	if enemy_kaiju:
 		enemy_kaiju.move_to(enemy_kaiju_marker.location)
-		popup_text.popup_centered("Plant Kaiju", "The Enemy kaiju moves around! Kill it quickly, so it does not oppose a threat to your units!")
+		if not enemy_moved:
+			enemy_moved = true
+			popup_text.popup_centered("Plant Kaiju", "The Enemy kaiju moves around! Kill it quickly, so it does not oppose a threat to your units!")
 	else:
 		enemy_kaiju = Global.EnemyKaiju.instance()
 		enemy_kaiju.connect("killed_unit", self, "_on_enemy_kaiju_killed_unit")
 		enemy_kaiju.initialize(enemy_kaiju_marker.location)
 		add_child(enemy_kaiju)
-		popup_text.popup_centered("Plant Kaiju", "Beware, an Enemy Kaiju appeared! If it moves onto one of your units, your unit will die. Move the Plant Kaiju onto its position to kill it!")
+		if not enemy_appeared:
+			enemy_appeared = true
+			popup_text.popup_centered("Plant Kaiju", "Beware, an Enemy Kaiju appeared! If it moves onto one of your units, your unit will die. Move the Plant Kaiju onto its position to kill it!")
 	place_kaiju_enemy_marker()
 
 func _on_EnemySpawn_timeout():

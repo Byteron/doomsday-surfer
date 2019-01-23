@@ -4,6 +4,9 @@ var stopped_timer = null
 
 var doomsday_surfer = null
 
+var moved = false
+var inactive = false
+
 func _ready():
 	._ready()
 	interface.hide_hunger_bar()
@@ -36,9 +39,13 @@ func _on_surfer_moved(last_quadrant, current_quadrant):
 	if last_quadrant:
 		quadrants[last_quadrant].start_marker()
 	quadrants[current_quadrant].reset_marker()
-	popup_text.popup_centered("Doomsday Surfer", "You moved the Doomsday Surfer. Hurray! If he comes from another area, he will prevent disasters from spawning now!")
+	if not moved:
+		moved = true
+		popup_text.popup_centered("Doomsday Surfer", "You moved the Doomsday Surfer. Hurray! If he comes from another area, he will prevent disasters from spawning now!")
 
 func _on_surfer_timeout(quadrant):
 	stopped_timer.start()
 	quadrants[quadrant].start_marker()
-	popup_text.popup_centered("Doomstday Surfer", "After some time the Doomsdaysurfer becomes inactive! Move the Doomsday Surfer to prevent disasters in another area!")
+	if not inactive:
+		inactive = true
+		popup_text.popup_centered("Doomstday Surfer", "After some time the Doomsdaysurfer becomes inactive! Move the Doomsday Surfer to prevent disasters in another area!")

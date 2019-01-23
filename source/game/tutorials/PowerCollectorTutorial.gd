@@ -2,6 +2,9 @@ extends "res://source/game/tutorials/Tutorial.gd"
 
 var power_collector
 
+var collected = false
+var charged = false
+
 func _ready():
 	._ready()
 	interface.hide_hunger_bar()
@@ -31,7 +34,9 @@ func _on_PowerCell_timeout():
 	items.add_child(power_cell)
 
 func _on_energy_bar_charged():
-	popup_text.popup_centered("Power Collector", "The Energy Bar is full! Now a quadrant will be resetted!")
+	if not charged:
+		charged = true
+		popup_text.popup_centered("Power Collector", "The Energy Bar is full! Now a quadrant will be resetted!")
 	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
 	var quadrant = quadrants[quadrant_dict.id]
 	quadrant.update_marker_position(quadrant_dict.locations[0].position)
@@ -60,5 +65,7 @@ func _on_thunder_animation_finished():
 	thunder = null
 
 func _on_power_cell_collected():
-	popup_text.popup_centered("Power Collector", "You collected a power cell! Your energy bar filled up a bit. If it is full, the disasters of the area with the highest danger level (amount of disasters) will be removed!")
+	if not collected:
+		collected = true
+		popup_text.popup_centered("Power Collector", "You collected a power cell! Your energy bar filled up a bit. If it is full, the disasters of the area with the highest danger level (amount of disasters) will be removed!")
 	interface.increase_power_level()
