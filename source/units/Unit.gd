@@ -3,6 +3,7 @@ extends AnimatedSprite
 signal killed_enemy_kaiju()
 signal power_cell_collected()
 signal food_collected()
+signal died(unit_name)
 
 var location = null
 
@@ -26,6 +27,9 @@ func select():
 func unselect():
 	scale = Vector2(1, 1)
 
+func kill():
+	$AnimationPlayer.play("die")
+
 func survivors(loc):
 	if name == "Survivors":
 		if loc.food:
@@ -46,3 +50,8 @@ func kaiju_plant(loc):
 
 func _on_Flipback_timeout():
 	flip_h = !flip_h
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	print(name, "died")
+	emit_signal("died", name)
+	queue_free()
