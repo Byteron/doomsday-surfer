@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lava.png-6e248ce536970c973a2a42779f93d39c.stex"
+path="res://.import/tornado_anim2.png-d697bfd6c61b930e4c3d57ed19d41ae7.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/lava.png"
-dest_files=[ "res://.import/lava.png-6e248ce536970c973a2a42779f93d39c.stex" ]
+source_file="res://graphics/disasters/tornado/tornado_anim2.png"
+dest_files=[ "res://.import/tornado_anim2.png-d697bfd6c61b930e4c3d57ed19d41ae7.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

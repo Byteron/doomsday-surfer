@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sea.png-eb9c8c3d9d3745e331ab7a8ca4880557.stex"
+path="res://.import/tsunami_anim2.png-a9dd752c6e7190f34f4435418f4ed7b5.stex"
 
 [deps]
 
-source_file="res://graphics/ending/Sea.png"
-dest_files=[ "res://.import/Sea.png-eb9c8c3d9d3745e331ab7a8ca4880557.stex" ]
+source_file="res://graphics/disasters/tsunami/tsunami_anim2.png"
+dest_files=[ "res://.import/tsunami_anim2.png-a9dd752c6e7190f34f4435418f4ed7b5.stex" ]
 
 [params]
 

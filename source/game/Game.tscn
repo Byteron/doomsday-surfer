@@ -6,11 +6,17 @@
 [ext_resource path="res://sounds/Music/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=4]
 [ext_resource path="res://source/game/Quadrant.gd" type="Script" id=5]
 [ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=6]
-[ext_resource path="res://graphics/terrain/tsunami.png" type="Texture" id=7]
-[ext_resource path="res://graphics/terrain/lava.png" type="Texture" id=8]
-[ext_resource path="res://graphics/terrain/earthquake.png" type="Texture" id=9]
-[ext_resource path="res://graphics/terrain/tornado.png" type="Texture" id=10]
+[ext_resource path="res://graphics/disasters/tsunami/tsunami.png" type="Texture" id=7]
+[ext_resource path="res://graphics/disasters/lava/lava.png" type="Texture" id=8]
+[ext_resource path="res://graphics/disasters/earthquake/earthquake.png" type="Texture" id=9]
+[ext_resource path="res://graphics/disasters/tornado/tornado.png" type="Texture" id=10]
 [ext_resource path="res://source/game/Grid.tscn" type="PackedScene" id=11]
+
+
+
+
+
+
 
 [node name="Game" type="Node2D"]
 

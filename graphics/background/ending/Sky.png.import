@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tornado.png-35c90a1e7a3a4e041073c729e0f8116e.stex"
+path="res://.import/Sky.png-67d8fb79615d086891e34feb8a9ec708.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/tornado.png"
-dest_files=[ "res://.import/tornado.png-35c90a1e7a3a4e041073c729e0f8116e.stex" ]
+source_file="res://graphics/background/ending/Sky.png"
+dest_files=[ "res://.import/Sky.png-67d8fb79615d086891e34feb8a9ec708.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

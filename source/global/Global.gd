@@ -31,7 +31,11 @@ var Marker = load("res://source/interface/gui/Marker.tscn")
 
 var EnemyKaiju = load("res://source/units/EnemyKaiju.tscn")
 
-var Disaster = load("res://source/items/Disaster.tscn")
+var Tsunami = load("res://source/disasters/Tsunami.tscn")
+var Lava = load("res://source/disasters/Lava.tscn")
+var Earthquake = load("res://source/disasters/Earthquake.tscn")
+var Tornado = load("res://source/disasters/Tornado.tscn")
+
 var PowerCell = load("res://source/items/PowerCell.tscn")
 var Food = load("res://source/items/Food.tscn")
 

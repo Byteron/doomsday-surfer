@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lava_anim3.png-c7383a0d6daff1642c4cdd05fe6a5c4a.stex"
+path="res://.import/tornado_anim3.png-9eec96a700874630b876baaba8a42b23.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/lava_anim3.png"
-dest_files=[ "res://.import/lava_anim3.png-c7383a0d6daff1642c4cdd05fe6a5c4a.stex" ]
+source_file="res://graphics/disasters/tornado/tornado_anim3.png"
+dest_files=[ "res://.import/tornado_anim3.png-9eec96a700874630b876baaba8a42b23.stex" ]
 
 [params]
 

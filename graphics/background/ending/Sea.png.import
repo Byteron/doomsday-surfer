@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/earthquake_anim3.png-3922ef6d5d728d89a58ea25fc4e9018c.stex"
+path="res://.import/Sea.png-907b1871639494611b653f503a147508.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/earthquake_anim3.png"
-dest_files=[ "res://.import/earthquake_anim3.png-3922ef6d5d728d89a58ea25fc4e9018c.stex" ]
+source_file="res://graphics/background/ending/Sea.png"
+dest_files=[ "res://.import/Sea.png-907b1871639494611b653f503a147508.stex" ]
 
 [params]
 

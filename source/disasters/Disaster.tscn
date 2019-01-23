@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Disaster" type="AnimatedSprite"]
+
+animation = "idle"
+playing = true
+_sections_unfolded = [ "Offset" ]
+
+

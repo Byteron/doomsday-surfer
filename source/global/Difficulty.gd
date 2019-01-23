@@ -62,13 +62,13 @@ func hard():
 	game_time = 90
 	tsunami_time = 10
 	lava_time = 14
-	earthquake_time = 15
+	earthquake_time = 13
 	tornado_time = 12
 	power_cell_time = 2
 	power_cell_amount = 6
 	food_time = 2
 	food_fill = 2
-	food_tick = 1
+	food_tick = 2
 	food_amount = 6
 	enemy_move_time = 3
 	enemy_spawn_time = 8

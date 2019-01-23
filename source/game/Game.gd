@@ -189,8 +189,8 @@ func _on_Tsunami_timeout():
 		if next_loc:
 			tsunami_marker.position = next_loc.position
 			tsunami_marker.animate()
-		var disaster = Global.Disaster.instance()
-		disaster.initialize(Global.tsunami_tex, loc.position)
+		var disaster = Global.Tsunami.instance()
+		disaster.position = loc.position
 		loc.disaster = disaster
 		quadrants[TSUNAMI].add_child(disaster)
 		_kill_unit(loc)
@@ -204,8 +204,8 @@ func _on_Lava_timeout():
 		if next_loc:
 			lava_marker.position = next_loc.position
 			lava_marker.animate()
-		var disaster = Global.Disaster.instance()
-		disaster.initialize(Global.lava_tex, loc.position)
+		var disaster = Global.Lava.instance()
+		disaster.position = loc.position
 		loc.disaster = disaster
 		quadrants[LAVA].add_child(disaster)
 		_kill_unit(loc)
@@ -219,8 +219,8 @@ func _on_Earthquake_timeout():
 		if next_loc:
 			earthquake_marker.position = next_loc.position
 			earthquake_marker.animate()
-		var disaster = Global.Disaster.instance()
-		disaster.initialize(Global.earthquake_tex, loc.position)
+		var disaster = Global.Earthquake.instance()
+		disaster.position = loc.position
 		loc.disaster = disaster
 		quadrants[EARTHQUAKE].add_child(disaster)
 		_kill_unit(loc)
@@ -234,8 +234,8 @@ func _on_Tornado_timeout():
 		if next_loc:
 			tornado_marker.position = next_loc.position
 			tornado_marker.animate()
-		var disaster = Global.Disaster.instance()
-		disaster.initialize(Global.tornado_tex, loc.position)
+		var disaster = Global.Tornado.instance()
+		disaster.position = loc.position
 		loc.disaster = disaster
 		quadrants[TORNADO].add_child(disaster)
 		_kill_unit(loc)

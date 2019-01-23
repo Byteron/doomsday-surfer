@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/earthquake_anim1.png-ae2414825b9bf47f263d43fc358458fe.stex"
+path="res://.import/earthquake_anim1.png-c70f7d0b555110c61b90b0db3eb415e0.stex"
 
 [deps]
 
-source_file="res://graphics/terrain/earthquake_anim1.png"
-dest_files=[ "res://.import/earthquake_anim1.png-ae2414825b9bf47f263d43fc358458fe.stex" ]
+source_file="res://graphics/disasters/earthquake/earthquake_anim1.png"
+dest_files=[ "res://.import/earthquake_anim1.png-c70f7d0b555110c61b90b0db3eb415e0.stex" ]
 
 [params]
 

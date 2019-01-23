@@ -36,7 +36,6 @@ func _on_surfer_moved(last_quadrant, current_quadrant):
 	if last_quadrant:
 		quadrants[last_quadrant].start_marker()
 	quadrants[current_quadrant].reset_marker()
-	print(current_quadrant, " ", quadrants[current_quadrant].name)
 	popup_text.popup_centered("Doomsday Surfer", "You moved the Doomsday Surfer. Hurray! If he comes from another area, he will prevent disasters from spawning now!")
 
 func _on_surfer_timeout(quadrant):

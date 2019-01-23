@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky.png-08c22183042d7a5957d8d2e213255b4f.stex"
+path="res://.import/island.png-102af08a7507092ed71c3fdf7c8f3384.stex"
 
 [deps]
 
-source_file="res://graphics/ending/Sky.png"
-dest_files=[ "res://.import/Sky.png-08c22183042d7a5957d8d2e213255b4f.stex" ]
+source_file="res://graphics/background/island.png"
+dest_files=[ "res://.import/island.png-102af08a7507092ed71c3fdf7c8f3384.stex" ]
 
 [params]
 

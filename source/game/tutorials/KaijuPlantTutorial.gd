@@ -43,7 +43,6 @@ func place_kaiju_enemy_marker():
 		enemy_kaiju_marker.position = loc.position
 		enemy_kaiju_marker.location = loc
 		enemy_kaiju_marker.next_location = next_loc
-	print("place enemy marker")
 	enemy_kaiju_marker.animate()
 
 func _on_enemy_kaiju_killed(loc):
@@ -70,9 +69,7 @@ func _on_EnemyMove_timeout():
 		add_child(enemy_kaiju)
 		popup_text.popup_centered("Plant Kaiju", "Beware, an Enemy Kaiju appeared! If it moves onto one of your units, your unit will die. Move the Plant Kaiju onto its position to kill it!")
 	place_kaiju_enemy_marker()
-	print("move timeout")
 
 func _on_EnemySpawn_timeout():
 	enemy_move_timer.start()
-	print("spawn timeout")
 	place_kaiju_enemy_marker()
