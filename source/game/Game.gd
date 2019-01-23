@@ -134,7 +134,6 @@ func animate_markers():
 # P R I V A T E   F U N C
 #
 
-
 func _get_quadrant_timer(quadrant):
 	return $Timers.get_child(quadrant)
 
