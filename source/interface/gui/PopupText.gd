@@ -1,6 +1,5 @@
 extends Popup
 
-onready var title = $NinePatchRect/CenterContainer/VBoxContainer/Title
 onready var text = $NinePatchRect/CenterContainer/VBoxContainer/Text
 
 func popup_centered(title, text):
