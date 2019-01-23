@@ -22,14 +22,15 @@ func decrease():
 		modulate = Color("ffffff")
 
 func _on_Timer_timeout():
-	value += 1
-	
-	if _is_close_to_starve():
-		$AudioStreamPlayer.play()
-		$AnimationPlayer.play("warn")
-	
-	if value >= max_value:
-		emit_signal("starved")
+	if visible:
+		value += 1
+		
+		if _is_close_to_starve():
+			$AudioStreamPlayer.play()
+			$AnimationPlayer.play("warn")
+		
+		if value >= max_value:
+			emit_signal("starved")
 
 func _is_close_to_starve():
 	return value * 1.5 > max_value
