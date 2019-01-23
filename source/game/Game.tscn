@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/game/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/game/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interface/gui/Interface.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sounds/Music/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=4]
-[ext_resource path="res://source/game/Quadrant.gd" type="Script" id=5]
-[ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=6]
-[ext_resource path="res://graphics/disasters/tsunami/tsunami.png" type="Texture" id=7]
-[ext_resource path="res://graphics/disasters/lava/lava.png" type="Texture" id=8]
-[ext_resource path="res://graphics/disasters/earthquake/earthquake.png" type="Texture" id=9]
-[ext_resource path="res://graphics/disasters/tornado/tornado.png" type="Texture" id=10]
-[ext_resource path="res://source/game/Grid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sounds/SFX/death.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/Music/Loyalty_Freak_Music_-_08_-_Last_Energy_For_The_Day.ogg" type="AudioStream" id=5]
+[ext_resource path="res://source/game/Quadrant.gd" type="Script" id=6]
+[ext_resource path="res://source/interface/gui/Marker.tscn" type="PackedScene" id=7]
+[ext_resource path="res://graphics/disasters/tsunami/tsunami.png" type="Texture" id=8]
+[ext_resource path="res://graphics/disasters/lava/lava.png" type="Texture" id=9]
+[ext_resource path="res://graphics/disasters/earthquake/earthquake.png" type="Texture" id=10]
+[ext_resource path="res://graphics/disasters/tornado/tornado.png" type="Texture" id=11]
+[ext_resource path="res://source/game/Grid.tscn" type="PackedScene" id=12]
 
 [node name="Game" type="Node2D"]
 
@@ -22,16 +23,25 @@ script = ExtResource( 1 )
 
 editor/display_folded = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="DieSound" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Timers" type="Node" parent="." index="3"]
+[node name="Timers" type="Node" parent="." index="4"]
 
 editor/display_folded = true
 
@@ -105,54 +115,54 @@ wait_time = 8.0
 one_shot = true
 autostart = false
 
-[node name="PowerCells" type="Node2D" parent="." index="4"]
+[node name="PowerCells" type="Node2D" parent="." index="5"]
 
-[node name="Food" type="Node2D" parent="." index="5"]
+[node name="Food" type="Node2D" parent="." index="6"]
 
-[node name="Q1" type="Node2D" parent="." index="6"]
+[node name="Q1" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
-[node name="Marker" parent="Q1" index="0" instance=ExtResource( 6 )]
+[node name="Marker" parent="Q1" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 320, 192 )
-texture = ExtResource( 7 )
-
-[node name="Q2" type="Node2D" parent="." index="7"]
-
-editor/display_folded = true
-script = ExtResource( 5 )
-
-[node name="Marker" parent="Q2" index="0" instance=ExtResource( 6 )]
-
-position = Vector2( 576, 190 )
 texture = ExtResource( 8 )
 
-[node name="Q3" type="Node2D" parent="." index="8"]
+[node name="Q2" type="Node2D" parent="." index="8"]
 
 editor/display_folded = true
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
-[node name="Marker" parent="Q3" index="0" instance=ExtResource( 6 )]
+[node name="Marker" parent="Q2" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 576, 448 )
+position = Vector2( 576, 190 )
 texture = ExtResource( 9 )
 
-[node name="Q4" type="Node2D" parent="." index="9"]
+[node name="Q3" type="Node2D" parent="." index="9"]
 
 editor/display_folded = true
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
-[node name="Marker" parent="Q4" index="0" instance=ExtResource( 6 )]
+[node name="Marker" parent="Q3" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 576, 448 )
+texture = ExtResource( 10 )
+
+[node name="Q4" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
+script = ExtResource( 6 )
+
+[node name="Marker" parent="Q4" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 320, 448 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Grid" parent="." index="10" instance=ExtResource( 11 )]
+[node name="Grid" parent="." index="11" instance=ExtResource( 12 )]
 
-[node name="Units" type="Node2D" parent="." index="11"]
+[node name="Units" type="Node2D" parent="." index="12"]
 
 [connection signal="timeout" from="Interface/BorderRight/BreakPoint/Timer" to="." method="_on_BreakPoint_timeout"]
 

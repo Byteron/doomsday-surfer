@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://source/game/tutorials/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://source/game/Background.tscn" type="PackedScene" id=2]
@@ -11,14 +11,9 @@
 [ext_resource path="res://graphics/disasters/lava/lava.png" type="Texture" id=9]
 [ext_resource path="res://graphics/disasters/earthquake/earthquake.png" type="Texture" id=10]
 [ext_resource path="res://graphics/disasters/tornado/tornado.png" type="Texture" id=11]
+[ext_resource path="res://sounds/SFX/death.wav" type="AudioStream" id=12]
 
-
-
-
-
-
-
-[node name="Tutorial" type="Node2D"]
+[node name="Tutorial" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -146,6 +141,15 @@ texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Units" type="Node2D" parent="." index="10"]
+
+[node name="DieSound" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="Timers/Tsunami" to="." method="_on_Tsunami_timeout"]
 

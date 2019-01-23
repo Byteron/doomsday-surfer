@@ -137,6 +137,7 @@ func _get_quadrant_timer(quadrant):
 
 func _kill_unit(loc):
 	if loc.unit:
+		$DieSound.play()
 		if loc.unit.name == "DoomsdaySurfer":
 			emit_signal("game_over", "Doomsday Surfer died")
 		if loc.unit.name == "Survivors":
