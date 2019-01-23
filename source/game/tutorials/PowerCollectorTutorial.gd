@@ -47,6 +47,7 @@ func _on_energy_bar_charged():
 			loc.disaster = null
 	quadrant_dict.level = 0
 
+var thunder = null
 func _spawn_thunder(position):
 	thunder = Global.Thunder.instance()
 	thunder.position = position

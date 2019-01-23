@@ -19,6 +19,7 @@ func decrease():
 	value = clamp(value - food_fill, 0, max_value)
 	if not _is_close_to_starve():
 		$AnimationPlayer.stop(true)
+		modulate = Color("ffffff")
 
 func _on_Timer_timeout():
 	value += 1
