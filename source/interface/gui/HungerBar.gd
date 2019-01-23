@@ -33,5 +33,5 @@ func _on_Timer_timeout():
 			emit_signal("starved")
 
 func _is_close_to_starve():
-	return value * 1.5 > max_value
+	return value * 2 > max_value
 	
