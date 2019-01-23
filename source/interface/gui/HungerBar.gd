@@ -17,12 +17,15 @@ func set_food_amount(amount):
 
 func decrease():
 	value = clamp(value - food_fill, 0, max_value)
+	if not _is_close_to_starve():
+		$AnimationPlayer.stop(true)
 
 func _on_Timer_timeout():
 	value += 1
 	
 	if _is_close_to_starve():
 		$AudioStreamPlayer.play()
+		$AnimationPlayer.play("warn")
 	
 	if value >= max_value:
 		emit_signal("starved")
