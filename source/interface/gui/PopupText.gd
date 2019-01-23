@@ -3,7 +3,7 @@ extends Popup
 onready var text = $NinePatchRect/CenterContainer/VBoxContainer/Text
 
 func popup_centered(title, text):
-	set_title(title)
+	set_text(text)
 	popup()
 	$Timer.start()
 

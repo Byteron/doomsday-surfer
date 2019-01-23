@@ -17,6 +17,7 @@ func _ready():
 	doomsday_surfer.set_surfing_time(4)
 	get_tree().call_group("Timer", "start")
 	popup_text.popup_centered("Doomsday Surfer", "The Doomsdaysurfer prevents disasters from spawning in his current area.")
+	moved = false
 
 func DoomsdaySurfer():
 	var unit = Global.DoomsdaySurfer.instance()
