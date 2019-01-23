@@ -1,0 +1,29 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://graphics/items/spark_effect1.png" type="Texture" id=1]
+[ext_resource path="res://graphics/items/spark_effect2.png" type="Texture" id=2]
+[ext_resource path="res://graphics/items/spark_effect3.png" type="Texture" id=3]
+[ext_resource path="res://graphics/items/spark_effect4.png" type="Texture" id=4]
+[ext_resource path="res://graphics/items/spark_effect5.png" type="Texture" id=5]
+[ext_resource path="res://graphics/items/spark_effect6.png" type="Texture" id=6]
+[ext_resource path="res://graphics/items/spark_effect7.png" type="Texture" id=7]
+[ext_resource path="res://graphics/items/spark_effect8.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "flash",
+"speed": 5.0
+} ]
+
+[node name="Flash" type="AnimatedSprite"]
+
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "flash"
+centered = false
+_sections_unfolded = [ "Transform" ]
+
+

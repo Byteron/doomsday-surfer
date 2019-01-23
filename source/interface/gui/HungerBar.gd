@@ -20,5 +20,13 @@ func decrease():
 
 func _on_Timer_timeout():
 	value += 1
+	
+	if _is_close_to_starve():
+		$AudioStreamPlayer.play()
+	
 	if value >= max_value:
 		emit_signal("starved")
+
+func _is_close_to_starve():
+	return value * 1.5 > max_value
+	

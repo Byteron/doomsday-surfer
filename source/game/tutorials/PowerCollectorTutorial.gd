@@ -35,6 +35,7 @@ func _on_energy_bar_charged():
 	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
 	var quadrant = quadrants[quadrant_dict.id]
 	quadrant.update_marker_position(quadrant_dict.locations[0].position)
+	_spawn_thunder(quadrant_dict.locations[3].position - Vector2(64, 64))
 	quadrant.reset_marker()
 	quadrant.start_marker()
 	var quadrant_timer = _get_quadrant_timer(quadrant_dict.id)
@@ -45,6 +46,17 @@ func _on_energy_bar_charged():
 			loc.disaster.queue_free()
 			loc.disaster = null
 	quadrant_dict.level = 0
+
+func _spawn_thunder(position):
+	thunder = Global.Thunder.instance()
+	thunder.position = position
+	add_child(thunder)
+	thunder.connect("animation_finished", self, "_on_thunder_animation_finished")
+	thunder.play("flash")
+
+func _on_thunder_animation_finished():
+	thunder.queue_free()
+	thunder = null
 
 func _on_power_cell_collected():
 	popup_text.popup_centered("Power Collector", "You collected a power cell! Your energy bar filled up a bit. If it is full, the disasters of the area with the highest danger level (amount of disasters) will be removed!")

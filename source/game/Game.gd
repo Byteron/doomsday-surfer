@@ -54,6 +54,7 @@ func _unhandled_input(event):
 			set_active_unit(unit)
 
 func _ready():
+	animate_markers()
 	DoomsdaySurfer()
 	KaijuPlant()
 	PowerCollector()
@@ -62,7 +63,6 @@ func _ready():
 	connect("game_over", self, "_on_game_over")
 	interface.connect("energy_bar_charged", self, "_on_energy_bar_charged")
 	interface.connect("survivors_starved", self, "_on_survivors_starved")
-	get_tree().call_group("Marker", "animate")
 	get_tree().call_group("Timer", "start")
 
 func DoomsdaySurfer():
@@ -123,9 +123,14 @@ func place_kaiju_enemy_marker():
 		enemy_kaiju_marker.next_location = next_loc
 	enemy_kaiju_marker.animate()
 
+func animate_markers():
+	for quadrant in quadrants:
+		quadrant.start_marker()
+
 #
 # P R I V A T E   F U N C
 #
+
 
 func _get_quadrant_timer(quadrant):
 	return $Timers.get_child(quadrant)
@@ -317,11 +322,25 @@ func _on_enemy_kaiju_killed_unit(loc):
 func _on_survivors_starved():
 	emit_signal("game_over", "Survivors starved")
 
+var thunder = null
 func _on_energy_bar_charged():
 	var quadrant_dict = grid.get_quadrant_with_highest_danger_level()
 	quadrants[quadrant_dict.id].update_marker_position(quadrant_dict.locations[0].position)
+	_spawn_thunder(quadrant_dict.locations[3].position - Vector2(64, 64))
 	for loc in quadrant_dict.locations:
 		if loc.disaster:
 			loc.disaster.queue_free()
 			loc.disaster = null
 	quadrant_dict.level = 0
+
+func _spawn_thunder(position):
+	thunder = Global.Thunder.instance()
+	thunder.position = position
+	add_child(thunder)
+	thunder.connect("animation_finished", self, "_on_thunder_animation_finished")
+	thunder.play("flash")
+
+func _on_thunder_animation_finished():
+	thunder.queue_free()
+	thunder = null
+	

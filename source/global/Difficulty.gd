@@ -46,7 +46,7 @@ func medium():
 	game_time = 60
 	tsunami_time = 11
 	lava_time = 15
-	earthquake_time = 16
+	earthquake_time = 15
 	tornado_time = 13
 	power_cell_time = 3
 	power_cell_amount = 4
