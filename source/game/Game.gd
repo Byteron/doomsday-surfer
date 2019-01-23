@@ -149,8 +149,14 @@ func _kill_unit(loc):
 func _on_unit_died(unit_name):
 	if unit_name == "DoomsdaySurfer":
 		emit_signal("game_over", "Doomsday Surfer died")
+		doomsday_surfer = null
 	if unit_name == "Survivors":
 		emit_signal("game_over", "Survivors died")
+		survivors = null
+	if unit_name == "PowerCollector":
+		power_collector = null
+	if unit_name == "KaijuPlant":
+		kaiju_plant = null
 
 func _check_game_over():
 	if _all_quadrants_destroyed():
@@ -258,26 +264,28 @@ func _on_surfer_timeout(quadrant):
 	quadrants[quadrant].start_marker()
 
 func _on_PowerCell_timeout():
-	var free_locations = grid.get_free_locations()
-	if free_locations.size() == 0:
-		return
-	randomize()
-	var loc = free_locations[randi() % free_locations.size()]
-	var power_cell = Global.PowerCell.instance()
-	power_cell.position = loc.position
-	loc.power_cell = power_cell
-	power_cells.add_child(power_cell)
+	if power_collector:
+		var free_locations = grid.get_free_locations()
+		if free_locations.size() == 0:
+			return
+		randomize()
+		var loc = free_locations[randi() % free_locations.size()]
+		var power_cell = Global.PowerCell.instance()
+		power_cell.position = loc.position
+		loc.power_cell = power_cell
+		power_cells.add_child(power_cell)
 
 func _on_Food_timeout():
-	var free_locations = grid.get_free_locations()
-	if free_locations.size() == 0:
-		return
-	randomize()
-	var loc = free_locations[randi() % free_locations.size()]
-	var chicken = Global.Food.instance()
-	chicken.position = loc.position
-	loc.food = chicken
-	food.add_child(chicken)
+	if survivors:
+		var free_locations = grid.get_free_locations()
+		if free_locations.size() == 0:
+			return
+		randomize()
+		var loc = free_locations[randi() % free_locations.size()]
+		var chicken = Global.Food.instance()
+		chicken.position = loc.position
+		loc.food = chicken
+		food.add_child(chicken)
 
 func _on_EnemyKaijuTimer_timeout():
 	if enemy_kaiju:
